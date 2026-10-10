@@ -1,0 +1,55 @@
+{
+  "bundle_version": "1.0.0",
+  "project_task_id": null,
+  "objective": null,
+  "entity": null,
+  "period": null,
+  "stop_at": null,
+  "status": "created",
+  "input_root": null,
+  "output_root": null,
+  "frozen_versions": {
+    "logic": {
+      "path": null,
+      "version": null,
+      "sha256": null
+    },
+    "dictionary": {
+      "path": null,
+      "version": null,
+      "sha256": null
+    },
+    "business_rules": {
+      "path": null,
+      "version": null,
+      "confirmation_ref": null,
+      "sha256": null
+    },
+    "prompts": [],
+    "material_sorting": {
+      "path": null,
+      "version": null,
+      "sha256": null
+    },
+    "rule_catalog": {
+      "path": null,
+      "version": null,
+      "sha256": null
+    }
+  },
+  "meeting_packages": [],
+  "source_manifest": [],
+  "human_decisions": [],
+  "tasks": [],
+  "unresolved_items": [],
+  "rrsi_status": "not_configured",
+  "deliverables": [],
+  "lead_scope": {
+    "enabled": false,
+    "method_ids": [],
+    "matter_scope": []
+  },
+  "ledger_schema_version": "1.0.0",
+  "effective_results": [],
+  "invalidation_log": []
+}

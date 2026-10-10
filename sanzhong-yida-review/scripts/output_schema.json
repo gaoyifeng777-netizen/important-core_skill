@@ -1,0 +1,560 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "1.1"
+      ]
+    },
+    "prompt_version": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "run_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "agent_name": {
+      "type": "string",
+      "enum": [
+        "meeting_schedule",
+        "proposal_extract",
+        "meeting_record",
+        "meeting_minutes"
+      ]
+    },
+    "meeting_package_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "partial",
+        "blocked",
+        "failed"
+      ]
+    },
+    "coverage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "file_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "assigned_scope": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "processed_scope": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "\\S"
+          },
+          "unprocessed_scope": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "\\S"
+          },
+          "read_status": {
+            "type": "string",
+            "enum": [
+              "read",
+              "partial",
+              "unreadable",
+              "not_provided",
+              "not_read",
+              "wrong_type"
+            ]
+          },
+          "note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "file_id",
+          "assigned_scope",
+          "processed_scope",
+          "unprocessed_scope",
+          "read_status",
+          "note"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "subjects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "subject_ref": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "file_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "subject_type": {
+            "type": "string",
+            "enum": [
+              "document_context",
+              "agenda_item",
+              "unresolved"
+            ]
+          },
+          "title_original": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "number_original": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "locator": {
+            "type": "string",
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "subject_ref",
+          "file_id",
+          "subject_type",
+          "title_original",
+          "number_original",
+          "locator"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "record_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "subject_ref": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "fact_state": {
+            "type": "string",
+            "enum": [
+              "planned",
+              "requested",
+              "recorded_decision",
+              "recorded_event",
+              "quoted_history",
+              "unclear"
+            ]
+          },
+          "extracted_fact": {
+            "type": "string"
+          },
+          "values": {
+            "type": "object",
+            "properties": {
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "field": {
+                      "type": "string",
+                      "enum": [
+                        "meeting.entity",
+                        "meeting.body",
+                        "meeting.number",
+                        "meeting.location",
+                        "agenda.title",
+                        "agenda.number",
+                        "matter.code",
+                        "matter.project",
+                        "matter.counterparty",
+                        "document.number",
+                        "document.version",
+                        "document.signature",
+                        "proposal.number",
+                        "proposal.proposer",
+                        "proposal.action",
+                        "proposal.budget",
+                        "proposal.analysis",
+                        "proposal.risk",
+                        "proposal.review",
+                        "approval.action",
+                        "schedule.change",
+                        "schedule.distribution",
+                        "history.reference",
+                        "decision.content",
+                        "condition.content",
+                        "follow_up.action",
+                        "follow_up.owner",
+                        "recusal.content",
+                        "document.amendment",
+                        "fact.other",
+                        "meeting.time",
+                        "notice.issued_at",
+                        "notice.received_at",
+                        "agenda.scheduled_at",
+                        "schedule.changed_at",
+                        "proposal.submitted_at",
+                        "approval.acted_at",
+                        "document.issued_at",
+                        "condition.due_at",
+                        "follow_up.due_at",
+                        "history.event_at",
+                        "fact.event_at",
+                        "financial.amount",
+                        "attendance.person",
+                        "attendance.count",
+                        "statement.opinion",
+                        "voting.count",
+                        "voting.expression"
+                      ]
+                    },
+                    "raw": {
+                      "type": "string"
+                    },
+                    "normalized": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "qualifiers": {
+                      "type": "object"
+                    },
+                    "evidence_indexes": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "required": [
+                    "field",
+                    "raw",
+                    "normalized",
+                    "qualifiers",
+                    "evidence_indexes"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "items"
+            ],
+            "additionalProperties": false
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "file_id": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "locator": {
+                  "type": "string",
+                  "pattern": "\\S"
+                },
+                "quote": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "file_id",
+                "locator",
+                "quote"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "related_record_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            }
+          },
+          "uncertainty": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "record_id",
+          "subject_ref",
+          "tags",
+          "fact_state",
+          "extracted_fact",
+          "values",
+          "evidence",
+          "related_record_ids",
+          "uncertainty"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "time_index": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "record_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "event_type": {
+            "type": "string",
+            "enum": [
+              "meeting_time",
+              "notice_issued_at",
+              "notice_received_at",
+              "agenda_scheduled_at",
+              "schedule_changed_at",
+              "proposal_submitted_at",
+              "approval_acted_at",
+              "document_issued_at",
+              "condition_due_at",
+              "follow_up_due_at",
+              "history_event_at",
+              "other_event_at"
+            ]
+          },
+          "raw": {
+            "type": "string"
+          },
+          "normalized": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "precision": {
+            "type": "string",
+            "enum": [
+              "datetime",
+              "date",
+              "month",
+              "year",
+              "relative",
+              "unknown"
+            ]
+          },
+          "item_index": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "record_id",
+          "event_type",
+          "raw",
+          "normalized",
+          "precision",
+          "item_index"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "field_checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "file_id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "subject_ref": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "\\S"
+          },
+          "field": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "present",
+              "not_found",
+              "ambiguous",
+              "unreadable",
+              "not_in_scope",
+              "not_read",
+              "not_provided"
+            ]
+          },
+          "record_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            }
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "\\S"
+          },
+          "search_scope": {
+            "type": "string",
+            "pattern": "\\S",
+            "description": "Optional local search range; defaults to this file processed_scope, then assigned_scope. Equality only; no containment proof."
+          }
+        },
+        "required": [
+          "file_id",
+          "subject_ref",
+          "field",
+          "state",
+          "record_ids",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "candidate_tags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "definition": {
+            "type": "string"
+          },
+          "record_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            }
+          }
+        },
+        "required": [
+          "name",
+          "definition",
+          "record_ids"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "requests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "file_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "\\S"
+          },
+          "reason": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "needed_input": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "request_type": {
+            "type": "string",
+            "enum": [
+              "dictionary_extension",
+              "material_request"
+            ]
+          },
+          "record_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            }
+          }
+        },
+        "required": [
+          "file_id",
+          "reason",
+          "needed_input"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "completion_note": {
+      "type": "string"
+    },
+    "dictionary_version": {
+      "type": "string",
+      "enum": [
+        "1.1"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "prompt_version",
+    "task_id",
+    "run_id",
+    "agent_name",
+    "meeting_package_id",
+    "status",
+    "coverage",
+    "subjects",
+    "records",
+    "time_index",
+    "field_checks",
+    "candidate_tags",
+    "requests",
+    "completion_note",
+    "dictionary_version"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "三重一大独立识别输出 v1.1"
+}

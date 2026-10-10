@@ -1,0 +1,419 @@
+{
+  "schema_version": "1.1",
+  "dictionary_version": "1.1",
+  "prompt_version": "1.2",
+  "task_id": "RELEASE-meeting_record",
+  "run_id": "RELEASE-meeting_record-01",
+  "agent_name": "meeting_record",
+  "meeting_package_id": "SYNTHETIC-BOARD-7",
+  "status": "completed",
+  "coverage": [
+    {
+      "file_id": "F001",
+      "assigned_scope": "all",
+      "processed_scope": "validation/behavior/fixtures/meeting_record.txt，第1—4行全文",
+      "unprocessed_scope": null,
+      "read_status": "read",
+      "note": "已逐行读取；第1行为合成验证材料声明。"
+    }
+  ],
+  "subjects": [
+    {
+      "subject_ref": "RELEASE-meeting_record-01-S001",
+      "file_id": "F001",
+      "subject_type": "document_context",
+      "title_original": "青岚测试有限公司董事会第7次会议记录",
+      "number_original": null,
+      "locator": "validation/behavior/fixtures/meeting_record.txt，第2行"
+    },
+    {
+      "subject_ref": "RELEASE-meeting_record-01-S002",
+      "file_id": "F001",
+      "subject_type": "agenda_item",
+      "title_original": "项目QL-A1储能一期投资方案",
+      "number_original": "议题一",
+      "locator": "validation/behavior/fixtures/meeting_record.txt，第3行"
+    },
+    {
+      "subject_ref": "RELEASE-meeting_record-01-S003",
+      "file_id": "F001",
+      "subject_type": "agenda_item",
+      "title_original": "项目QL-B2物流系统采购",
+      "number_original": "议题二",
+      "locator": "validation/behavior/fixtures/meeting_record.txt，第4行"
+    }
+  ],
+  "records": [
+    {
+      "record_id": "RELEASE-meeting_record-01-R001",
+      "subject_ref": "RELEASE-meeting_record-01-S001",
+      "tags": [
+        "meeting_info"
+      ],
+      "fact_state": "recorded_event",
+      "extracted_fact": "本记录记载会议为青岚测试有限公司董事会第7次会议，实际召开日期为2025年9月10日。",
+      "values": {
+        "items": [
+          {
+            "field": "meeting.entity",
+            "raw": "青岚测试有限公司",
+            "normalized": null,
+            "qualifiers": {},
+            "evidence_indexes": [
+              0
+            ]
+          },
+          {
+            "field": "meeting.body",
+            "raw": "董事会",
+            "normalized": null,
+            "qualifiers": {},
+            "evidence_indexes": [
+              0
+            ]
+          },
+          {
+            "field": "meeting.number",
+            "raw": "第7次",
+            "normalized": null,
+            "qualifiers": {},
+            "evidence_indexes": [
+              0
+            ]
+          },
+          {
+            "field": "meeting.time",
+            "raw": "2025年9月10日",
+            "normalized": "2025-09-10",
+            "qualifiers": {
+              "precision": "date"
+            },
+            "evidence_indexes": [
+              0
+            ]
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "file_id": "F001",
+          "locator": "validation/behavior/fixtures/meeting_record.txt，第2行",
+          "quote": "青岚测试有限公司董事会第7次会议记录。实际召开日期：2025年9月10日。"
+        }
+      ],
+      "related_record_ids": [],
+      "uncertainty": []
+    },
+    {
+      "record_id": "RELEASE-meeting_record-01-R002",
+      "subject_ref": "RELEASE-meeting_record-01-S002",
+      "tags": [
+        "agenda_item"
+      ],
+      "fact_state": "recorded_event",
+      "extracted_fact": "本记录将“项目QL-A1储能一期投资方案”列为议题一，原文项目编号为QL-A1。",
+      "values": {
+        "items": [
+          {
+            "field": "agenda.title",
+            "raw": "项目QL-A1储能一期投资方案",
+            "normalized": null,
+            "qualifiers": {},
+            "evidence_indexes": [
+              0
+            ]
+          },
+          {
+            "field": "agenda.number",
+            "raw": "议题一",
+            "normalized": null,
+            "qualifiers": {},
+            "evidence_indexes": [
+              0
+            ]
+          },
+          {
+            "field": "matter.code",
+            "raw": "QL-A1",
+            "normalized": null,
+            "qualifiers": {},
+            "evidence_indexes": [
+              0
+            ]
+          },
+          {
+            "field": "matter.project",
+            "raw": "项目QL-A1储能一期",
+            "normalized": null,
+            "qualifiers": {},
+            "evidence_indexes": [
+              0
+            ]
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "file_id": "F001",
+          "locator": "validation/behavior/fixtures/meeting_record.txt，第3行，议题标题",
+          "quote": "议题一：项目QL-A1储能一期投资方案。"
+        }
+      ],
+      "related_record_ids": [
+        "RELEASE-meeting_record-01-R003"
+      ],
+      "uncertainty": []
+    },
+    {
+      "record_id": "RELEASE-meeting_record-01-R003",
+      "subject_ref": "RELEASE-meeting_record-01-S002",
+      "tags": [
+        "decision"
+      ],
+      "fact_state": "recorded_decision",
+      "extracted_fact": "本记录记载，对议题一项目QL-A1储能一期投资方案，讨论后批准投资人民币100万元。",
+      "values": {
+        "items": [
+          {
+            "field": "decision.content",
+            "raw": "讨论后批准投资人民币100万元",
+            "normalized": null,
+            "qualifiers": {},
+            "evidence_indexes": [
+              0
+            ]
+          },
+          {
+            "field": "financial.amount",
+            "raw": "人民币100万元",
+            "normalized": "100",
+            "qualifiers": {
+              "currency": "人民币",
+              "unit": "万元",
+              "amount_basis": "投资",
+              "scope_raw": "项目QL-A1储能一期",
+              "tax_basis": "unknown",
+              "bound": "exact",
+              "stage": "decision"
+            },
+            "evidence_indexes": [
+              0
+            ]
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "file_id": "F001",
+          "locator": "validation/behavior/fixtures/meeting_record.txt，第3行",
+          "quote": "议题一：项目QL-A1储能一期投资方案。讨论后批准投资人民币100万元。"
+        }
+      ],
+      "related_record_ids": [
+        "RELEASE-meeting_record-01-R002"
+      ],
+      "uncertainty": []
+    },
+    {
+      "record_id": "RELEASE-meeting_record-01-R004",
+      "subject_ref": "RELEASE-meeting_record-01-S003",
+      "tags": [
+        "agenda_item"
+      ],
+      "fact_state": "recorded_event",
+      "extracted_fact": "本记录将“项目QL-B2物流系统采购”列为议题二，原文项目编号为QL-B2。",
+      "values": {
+        "items": [
+          {
+            "field": "agenda.title",
+            "raw": "项目QL-B2物流系统采购",
+            "normalized": null,
+            "qualifiers": {},
+            "evidence_indexes": [
+              0
+            ]
+          },
+          {
+            "field": "agenda.number",
+            "raw": "议题二",
+            "normalized": null,
+            "qualifiers": {},
+            "evidence_indexes": [
+              0
+            ]
+          },
+          {
+            "field": "matter.code",
+            "raw": "QL-B2",
+            "normalized": null,
+            "qualifiers": {},
+            "evidence_indexes": [
+              0
+            ]
+          },
+          {
+            "field": "matter.project",
+            "raw": "项目QL-B2物流系统采购",
+            "normalized": null,
+            "qualifiers": {},
+            "evidence_indexes": [
+              0
+            ]
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "file_id": "F001",
+          "locator": "validation/behavior/fixtures/meeting_record.txt，第4行，议题标题",
+          "quote": "议题二：项目QL-B2物流系统采购。"
+        }
+      ],
+      "related_record_ids": [
+        "RELEASE-meeting_record-01-R005"
+      ],
+      "uncertainty": []
+    },
+    {
+      "record_id": "RELEASE-meeting_record-01-R005",
+      "subject_ref": "RELEASE-meeting_record-01-S003",
+      "tags": [
+        "decision",
+        "condition",
+        "follow_up"
+      ],
+      "fact_state": "recorded_decision",
+      "extracted_fact": "本记录记载，对议题二项目QL-B2物流系统采购，决定暂缓采购，待技术方案论证完成后重新提交董事会。",
+      "values": {
+        "items": [
+          {
+            "field": "decision.content",
+            "raw": "暂缓采购，待技术方案论证完成后重新提交董事会",
+            "normalized": null,
+            "qualifiers": {},
+            "evidence_indexes": [
+              0
+            ]
+          },
+          {
+            "field": "condition.content",
+            "raw": "待技术方案论证完成后重新提交董事会",
+            "normalized": null,
+            "qualifiers": {},
+            "evidence_indexes": [
+              0
+            ]
+          },
+          {
+            "field": "follow_up.action",
+            "raw": "待技术方案论证完成后重新提交董事会",
+            "normalized": null,
+            "qualifiers": {},
+            "evidence_indexes": [
+              0
+            ]
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "file_id": "F001",
+          "locator": "validation/behavior/fixtures/meeting_record.txt，第4行",
+          "quote": "议题二：项目QL-B2物流系统采购。决定：暂缓采购，待技术方案论证完成后重新提交董事会。"
+        }
+      ],
+      "related_record_ids": [
+        "RELEASE-meeting_record-01-R004"
+      ],
+      "uncertainty": []
+    }
+  ],
+  "time_index": [
+    {
+      "record_id": "RELEASE-meeting_record-01-R001",
+      "item_index": 3,
+      "event_type": "meeting_time",
+      "raw": "2025年9月10日",
+      "normalized": "2025-09-10",
+      "precision": "date"
+    }
+  ],
+  "field_checks": [
+    {
+      "file_id": "F001",
+      "subject_ref": null,
+      "field": "meeting_identity",
+      "state": "present",
+      "record_ids": [
+        "RELEASE-meeting_record-01-R001"
+      ],
+      "search_scope": "validation/behavior/fixtures/meeting_record.txt，第1—4行全文",
+      "reason": "已提取会议所属单位、机构、次数和日期；全文未见地点、主持人、记录人。"
+    },
+    {
+      "file_id": "F001",
+      "subject_ref": null,
+      "field": "attendance",
+      "state": "not_found",
+      "record_ids": [],
+      "search_scope": "validation/behavior/fixtures/meeting_record.txt，第1—4行全文",
+      "reason": "全文未见出席、列席、缺席人员及人数等身份记载。"
+    },
+    {
+      "file_id": "F001",
+      "subject_ref": null,
+      "field": "agenda",
+      "state": "present",
+      "record_ids": [
+        "RELEASE-meeting_record-01-R002",
+        "RELEASE-meeting_record-01-R004"
+      ],
+      "search_scope": "validation/behavior/fixtures/meeting_record.txt，第1—4行全文",
+      "reason": "已提取两个议题原名及原始序号；未见汇报主体。"
+    },
+    {
+      "file_id": "F001",
+      "subject_ref": null,
+      "field": "statements",
+      "state": "not_found",
+      "record_ids": [],
+      "search_scope": "validation/behavior/fixtures/meeting_record.txt，第1—4行全文",
+      "reason": "全文未记载具体发言人及其个人意见、提问或回应；“讨论后批准”未提供个人发言。"
+    },
+    {
+      "file_id": "F001",
+      "subject_ref": null,
+      "field": "voting",
+      "state": "not_found",
+      "record_ids": [],
+      "search_scope": "validation/behavior/fixtures/meeting_record.txt，第1—4行全文",
+      "reason": "全文未明确记载表决方式、参加表决主体或人数、票数及表决文字结论；已记载的批准和暂缓分别按决定提取，不据此补填表决事实。"
+    },
+    {
+      "file_id": "F001",
+      "subject_ref": null,
+      "field": "decision_conditions",
+      "state": "present",
+      "record_ids": [
+        "RELEASE-meeting_record-01-R003",
+        "RELEASE-meeting_record-01-R005"
+      ],
+      "search_scope": "validation/behavior/fixtures/meeting_record.txt，第1—4行全文",
+      "reason": null
+    },
+    {
+      "file_id": "F001",
+      "subject_ref": null,
+      "field": "follow_up",
+      "state": "present",
+      "record_ids": [
+        "RELEASE-meeting_record-01-R005"
+      ],
+      "search_scope": "validation/behavior/fixtures/meeting_record.txt，第1—4行全文",
+      "reason": "记载技术方案论证完成后重报董事会，未明示落实责任主体或具体完成期限。"
+    }
+  ],
+  "candidate_tags": [],
+  "requests": [],
+  "completion_note": "已读取白名单F001全文第1—4行并完成七项必查字段处理。记录仅反映合成材料所载内容；未将批准或暂缓推定为具体表决事实，未推断现实履行情况。文件版本synthetic-1来自任务清单，原文未明示本文件版本，未据任务信息补写为原文事实。"
+}

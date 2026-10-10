@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "status": "release",
+  "date": "2026-10-10",
+  "entry": "sanzhong-yida-review/SKILL.md",
+  "archive": "dist/sanzhong-yida-review-1.0.0.zip",
+  "archive_sha256": "80c89ff28592f201afa0a99b2d8f7f37ad682b873ba09233d1ee89c6278f6c8f",
+  "skill_manifest_sha256": "3b4a5f1df08c0c58651ac1195207331dfb82e8f3017c5ec501edd72f8d539783",
+  "verification": {
+    "regression_cases": 89,
+    "extraction_roles": 4,
+    "judge": "not_completed_service_usage_limit",
+    "final_independent_review": "not_completed_service_usage_limit",
+    "other_model_runtimes": "not_tested"
+  }
+}

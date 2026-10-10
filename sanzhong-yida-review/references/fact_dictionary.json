@@ -1,0 +1,814 @@
+{
+  "dictionary_version": "1.1",
+  "schema_version": "1.1",
+  "description": "四路独立事实提取字典；同名字段表达相同属性，来源身份、事实性质和阶段另行保留。",
+  "item_shape": {
+    "required": [
+      "field",
+      "raw",
+      "normalized",
+      "qualifiers",
+      "evidence_indexes"
+    ],
+    "normalized": "string or null; decimal/integer use decimal string, not float",
+    "evidence_indexes": "zero-based positions in the same record.evidence"
+  },
+  "fields": {
+    "meeting.entity": {
+      "label": "材料明示的会议所属单位",
+      "roles": [
+        "meeting_schedule",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "不是主控任务对象的自动复制。"
+    },
+    "meeting.body": {
+      "label": "会议机构/会议类型",
+      "roles": [
+        "meeting_schedule",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "原文党委会、董事会、总经理办公会等；不自动视为同一机构。"
+    },
+    "meeting.number": {
+      "label": "会议届次/次数",
+      "roles": [
+        "meeting_schedule",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "保留届次、年度和次数原文；会议次数不作跨机构事项键。"
+    },
+    "meeting.location": {
+      "label": "会议地点",
+      "roles": [
+        "meeting_schedule",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": ""
+    },
+    "agenda.title": {
+      "label": "原始议题名称",
+      "roles": [
+        "meeting_schedule",
+        "proposal_extract",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "不把相似标题改成同一名称。"
+    },
+    "agenda.number": {
+      "label": "本材料议题序号",
+      "roles": [
+        "meeting_schedule",
+        "proposal_extract",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "仅来源内顺序，不是全局事项编号。"
+    },
+    "matter.code": {
+      "label": "原文正式事项/项目编号",
+      "roles": [
+        "meeting_schedule",
+        "proposal_extract",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "记录原文编号及类别；不是Agent生成的matter_id。"
+    },
+    "matter.project": {
+      "label": "项目或标的名称",
+      "roles": [
+        "meeting_schedule",
+        "proposal_extract",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": ""
+    },
+    "matter.counterparty": {
+      "label": "相对方",
+      "roles": [
+        "meeting_schedule",
+        "proposal_extract",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "不能用同一相对方单独确认同一事项。"
+    },
+    "document.number": {
+      "label": "本文件文号",
+      "roles": [
+        "meeting_schedule",
+        "proposal_extract",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "引用历史文号用history.reference。"
+    },
+    "document.version": {
+      "label": "本文件明示版本",
+      "roles": [
+        "meeting_schedule",
+        "proposal_extract",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "不从修改时间猜有效版本。"
+    },
+    "document.signature": {
+      "label": "签署/审核/用印记载",
+      "roles": [
+        "proposal_extract",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "保留可辨认内容；不自动鉴定真实性。"
+    },
+    "proposal.number": {
+      "label": "议案/申请编号",
+      "roles": [
+        "proposal_extract"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": ""
+    },
+    "proposal.proposer": {
+      "label": "提出单位或人员",
+      "roles": [
+        "proposal_extract"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": ""
+    },
+    "proposal.action": {
+      "label": "申请的具体动作",
+      "roles": [
+        "proposal_extract"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "拟提请批准、请求审议等，不改为已批准。"
+    },
+    "proposal.budget": {
+      "label": "预算来源及纳入情况的记载",
+      "roles": [
+        "proposal_extract"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "申请中声称已有预算不能替代预算批复。"
+    },
+    "proposal.analysis": {
+      "label": "论证/测算/方案比较依据",
+      "roles": [
+        "proposal_extract"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "提取假设、依据、结论和限制，不自行评价充分性。"
+    },
+    "proposal.risk": {
+      "label": "材料载明风险及应对",
+      "roles": [
+        "proposal_extract"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "不是Agent自拟的风险结论。"
+    },
+    "proposal.review": {
+      "label": "专业审查意见",
+      "roles": [
+        "proposal_extract"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "保留审查人、日期、保留意见和适用对象。"
+    },
+    "approval.action": {
+      "label": "审批节点及处理意见",
+      "roles": [
+        "proposal_extract"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "保留签署人、角色、意见与条件；同意上会不等于批准实施。"
+    },
+    "schedule.change": {
+      "label": "议程/时间/议题变更",
+      "roles": [
+        "meeting_schedule"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "写明变更前后、增加/撤回/改期及文号；没有替代关系不猜新旧。"
+    },
+    "schedule.distribution": {
+      "label": "通知或资料发送/接收记载",
+      "roles": [
+        "meeting_schedule"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "收件名单不等于实际送达。"
+    },
+    "history.reference": {
+      "label": "材料引用的历史事项或批准",
+      "roles": [
+        "meeting_schedule",
+        "proposal_extract",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "引用原文，fact_state通常为quoted_history；不是已核验历史事实。"
+    },
+    "decision.content": {
+      "label": "材料记载的决定",
+      "roles": [
+        "meeting_schedule",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "完整保留通过/暂缓/否决/听取/原则同意及条件，不推定生效。"
+    },
+    "condition.content": {
+      "label": "约束审议、批准或实施的条件",
+      "roles": [
+        "proposal_extract",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "仅提取原文明确约束审议、批准或实施的前提、边界、禁止或例外，并关联对应申请/决定；普通同意上会意见和分析假设/局限保留在本角色可用的意见/分析字段，不能仅因出现“待确认”就作为条件。"
+    },
+    "follow_up.action": {
+      "label": "后续行动及落实安排",
+      "roles": [
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "安排不等于已履行；责任主体及期限分别保留。"
+    },
+    "follow_up.owner": {
+      "label": "落实责任部门或人员",
+      "roles": [
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": ""
+    },
+    "recusal.content": {
+      "label": "回避、关联关系或参与限制记载",
+      "roles": [
+        "proposal_extract",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "未记载回避不等于应回避而未回避。"
+    },
+    "document.amendment": {
+      "label": "更正/补正/替代关系",
+      "roles": [
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "保留被修订版本及授权依据，不能仅凭较晚日期覆盖。"
+    },
+    "fact.other": {
+      "label": "尚无字典项的有据事实",
+      "roles": [
+        "meeting_schedule",
+        "proposal_extract",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "不参与自动字段比较；每条含fact.other的记录须由requests中request_type=dictionary_extension且record_ids包含该记录的请求说明扩展需要；不丢弃原文。"
+    },
+    "meeting.time": {
+      "label": "材料记载的召开/拟召开时间",
+      "roles": [
+        "meeting_schedule",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "date",
+      "qualifiers": {
+        "precision": {
+          "type": "string",
+          "enum": [
+            "datetime",
+            "date",
+            "month",
+            "year",
+            "relative",
+            "unknown"
+          ]
+        }
+      },
+      "note": "缺年、相对日期无确定锚点时normalized=null；不从任务年份补值。",
+      "event_type": "meeting_time"
+    },
+    "notice.issued_at": {
+      "label": "通知发出时间",
+      "roles": [
+        "meeting_schedule"
+      ],
+      "value_type": "date",
+      "qualifiers": {
+        "precision": {
+          "type": "string",
+          "enum": [
+            "datetime",
+            "date",
+            "month",
+            "year",
+            "relative",
+            "unknown"
+          ]
+        }
+      },
+      "note": "缺年、相对日期无确定锚点时normalized=null；不从任务年份补值。",
+      "event_type": "notice_issued_at"
+    },
+    "notice.received_at": {
+      "label": "明确接收通知时间",
+      "roles": [
+        "meeting_schedule"
+      ],
+      "value_type": "date",
+      "qualifiers": {
+        "precision": {
+          "type": "string",
+          "enum": [
+            "datetime",
+            "date",
+            "month",
+            "year",
+            "relative",
+            "unknown"
+          ]
+        }
+      },
+      "note": "缺年、相对日期无确定锚点时normalized=null；不从任务年份补值。",
+      "event_type": "notice_received_at"
+    },
+    "agenda.scheduled_at": {
+      "label": "议程具体安排时间",
+      "roles": [
+        "meeting_schedule"
+      ],
+      "value_type": "date",
+      "qualifiers": {
+        "precision": {
+          "type": "string",
+          "enum": [
+            "datetime",
+            "date",
+            "month",
+            "year",
+            "relative",
+            "unknown"
+          ]
+        }
+      },
+      "note": "缺年、相对日期无确定锚点时normalized=null；不从任务年份补值。",
+      "event_type": "agenda_scheduled_at"
+    },
+    "schedule.changed_at": {
+      "label": "调整发生/发出时间",
+      "roles": [
+        "meeting_schedule"
+      ],
+      "value_type": "date",
+      "qualifiers": {
+        "precision": {
+          "type": "string",
+          "enum": [
+            "datetime",
+            "date",
+            "month",
+            "year",
+            "relative",
+            "unknown"
+          ]
+        }
+      },
+      "note": "缺年、相对日期无确定锚点时normalized=null；不从任务年份补值。",
+      "event_type": "schedule_changed_at"
+    },
+    "proposal.submitted_at": {
+      "label": "申请提交时间",
+      "roles": [
+        "proposal_extract"
+      ],
+      "value_type": "date",
+      "qualifiers": {
+        "precision": {
+          "type": "string",
+          "enum": [
+            "datetime",
+            "date",
+            "month",
+            "year",
+            "relative",
+            "unknown"
+          ]
+        }
+      },
+      "note": "缺年、相对日期无确定锚点时normalized=null；不从任务年份补值。",
+      "event_type": "proposal_submitted_at"
+    },
+    "approval.acted_at": {
+      "label": "审批处理时间",
+      "roles": [
+        "proposal_extract"
+      ],
+      "value_type": "date",
+      "qualifiers": {
+        "precision": {
+          "type": "string",
+          "enum": [
+            "datetime",
+            "date",
+            "month",
+            "year",
+            "relative",
+            "unknown"
+          ]
+        }
+      },
+      "note": "缺年、相对日期无确定锚点时normalized=null；不从任务年份补值。",
+      "event_type": "approval_acted_at"
+    },
+    "document.issued_at": {
+      "label": "文件形成/印发时间",
+      "roles": [
+        "meeting_schedule",
+        "proposal_extract",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "date",
+      "qualifiers": {
+        "precision": {
+          "type": "string",
+          "enum": [
+            "datetime",
+            "date",
+            "month",
+            "year",
+            "relative",
+            "unknown"
+          ]
+        }
+      },
+      "note": "缺年、相对日期无确定锚点时normalized=null；不从任务年份补值。",
+      "event_type": "document_issued_at"
+    },
+    "condition.due_at": {
+      "label": "条件要求的完成期限",
+      "roles": [
+        "proposal_extract",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "date",
+      "qualifiers": {
+        "precision": {
+          "type": "string",
+          "enum": [
+            "datetime",
+            "date",
+            "month",
+            "year",
+            "relative",
+            "unknown"
+          ]
+        }
+      },
+      "note": "缺年、相对日期无确定锚点时normalized=null；不从任务年份补值。",
+      "event_type": "condition_due_at"
+    },
+    "follow_up.due_at": {
+      "label": "落实期限",
+      "roles": [
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "date",
+      "qualifiers": {
+        "precision": {
+          "type": "string",
+          "enum": [
+            "datetime",
+            "date",
+            "month",
+            "year",
+            "relative",
+            "unknown"
+          ]
+        }
+      },
+      "note": "缺年、相对日期无确定锚点时normalized=null；不从任务年份补值。",
+      "event_type": "follow_up_due_at"
+    },
+    "history.event_at": {
+      "label": "原文引用的历史事件时间",
+      "roles": [
+        "meeting_schedule",
+        "proposal_extract",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "date",
+      "qualifiers": {
+        "precision": {
+          "type": "string",
+          "enum": [
+            "datetime",
+            "date",
+            "month",
+            "year",
+            "relative",
+            "unknown"
+          ]
+        }
+      },
+      "note": "缺年、相对日期无确定锚点时normalized=null；不从任务年份补值。",
+      "event_type": "history_event_at"
+    },
+    "fact.event_at": {
+      "label": "其他明确事件时间",
+      "roles": [
+        "meeting_schedule",
+        "proposal_extract",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "date",
+      "qualifiers": {
+        "precision": {
+          "type": "string",
+          "enum": [
+            "datetime",
+            "date",
+            "month",
+            "year",
+            "relative",
+            "unknown"
+          ]
+        }
+      },
+      "note": "缺年、相对日期无确定锚点时normalized=null；不从任务年份补值。",
+      "event_type": "other_event_at"
+    },
+    "financial.amount": {
+      "label": "金额及其完整口径",
+      "roles": [
+        "meeting_schedule",
+        "proposal_extract",
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "decimal",
+      "qualifiers": {
+        "currency": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": "string",
+          "enum": [
+            "元",
+            "万元",
+            "亿元",
+            "unknown"
+          ]
+        },
+        "amount_basis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "原文金额性质或计量口径，如投资上限、合同总价；不填项目名称或申请/批准状态。"
+        },
+        "scope_raw": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "原文金额对应的项目、标的及一期/单包/年度等适用范围；只有投资上限等金额性质时为null。"
+        },
+        "tax_basis": {
+          "type": "string",
+          "enum": [
+            "inclusive",
+            "exclusive",
+            "unknown"
+          ]
+        },
+        "bound": {
+          "type": "string",
+          "enum": [
+            "exact",
+            "cap",
+            "floor",
+            "range",
+            "approximate",
+            "unknown"
+          ]
+        },
+        "stage": {
+          "type": "string",
+          "enum": [
+            "requested",
+            "decision",
+            "budget",
+            "estimate",
+            "historical",
+            "actual_claim",
+            "unknown"
+          ],
+          "description": "金额所处业务阶段；拟申请为requested，会议批准为decision，历史引述为historical，不由所在文件类型代定。"
+        }
+      },
+      "note": "amount_basis为金额性质（如投资上限），scope_raw为金额对应的项目/标的及范围，stage为申请/决定等阶段；三者分别从原文落位，不互相代填。normalized只整理原数值字符串，不折成元；范围金额不取中点，normalized=null；货币未注明不得默认人民币。"
+    },
+    "attendance.person": {
+      "label": "参会人员与原文身份",
+      "roles": [
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {
+        "role_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "presence": {
+          "type": "string",
+          "enum": [
+            "present",
+            "absent",
+            "remote",
+            "unknown"
+          ]
+        },
+        "voting_right": {
+          "type": "string",
+          "enum": [
+            "yes",
+            "no",
+            "unknown"
+          ]
+        }
+      },
+      "note": "只记原文明确事实，列席不能算有表决权，应到名单不能当实到。"
+    },
+    "attendance.count": {
+      "label": "材料明示的人数",
+      "roles": [
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "integer",
+      "qualifiers": {
+        "count_type": {
+          "type": "string",
+          "enum": [
+            "should_attend",
+            "present",
+            "absent",
+            "nonvoting",
+            "eligible_voters",
+            "unknown"
+          ]
+        },
+        "basis_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "note": "只提取明示数量，不按姓名行数推算；计算由judge留痕。"
+    },
+    "statement.opinion": {
+      "label": "发言人及意见",
+      "roles": [
+        "meeting_record"
+      ],
+      "value_type": "text",
+      "qualifiers": {
+        "speaker_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "role_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sequence_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "note": "保留次序原文，文字排列本身不当然证明先后发言；不同意/保留意见不能归为同意。"
+    },
+    "voting.count": {
+      "label": "材料明示的表决数量",
+      "roles": [
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "integer",
+      "qualifiers": {
+        "count_type": {
+          "type": "string",
+          "enum": [
+            "for",
+            "against",
+            "abstain",
+            "invalid",
+            "eligible_voters",
+            "voted",
+            "unknown"
+          ]
+        },
+        "basis_raw": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "note": "一致通过不转换成数字；分母按已确认规则及证据确定。"
+    },
+    "voting.expression": {
+      "label": "表决方式与文字结论",
+      "roles": [
+        "meeting_record",
+        "meeting_minutes"
+      ],
+      "value_type": "text",
+      "qualifiers": {},
+      "note": "全票/一致通过保持文字；不能自行填赞成票数或应到人数。"
+    }
+  }
+}

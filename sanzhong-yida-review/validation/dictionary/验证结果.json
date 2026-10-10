@@ -1,0 +1,1077 @@
+{
+  "before": {
+    "verified_at_utc": "2026-10-10T06:13:48.080944+00:00",
+    "case_count": 55,
+    "passed_count": 18,
+    "failed_count": 37,
+    "function_case_count": 52,
+    "cli_case_count": 55,
+    "dictionary_version": "1.0",
+    "legacy_suites": [
+      {
+        "suite": "validator_regression.py",
+        "test_count": 16,
+        "passed": true
+      },
+      {
+        "suite": "dictionary_regression.py",
+        "test_count": 18,
+        "passed": true
+      }
+    ],
+    "overall_ok": false,
+    "validator_sha256": "c1b29e0fc6df516851c51427479fd8fab5dbbbe45a8794ce4fa88b03f7bd3b0d",
+    "cases": [
+      {
+        "name": "valid_existing_payload",
+        "expected_ok": true,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "other_tag_remains_legal",
+        "expected_ok": true,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_top_null",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [],
+        "cli_passed": false,
+        "cli_errors": [],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "task_top_list",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_top_string",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_top_number",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_top_boolean",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_files_null",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_exception": "TypeError",
+        "cli_passed": false,
+        "cli_errors": [
+          "'NoneType' object is not iterable"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "task_files_string",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_exception": "TypeError",
+        "cli_passed": false,
+        "cli_errors": [
+          "string indices must be integers, not 'str'"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "task_files_object",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [
+          "coverage does not match assigned file_ids"
+        ],
+        "cli_passed": false,
+        "cli_errors": [
+          "coverage does not match assigned file_ids"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "task_files_number",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_exception": "TypeError",
+        "cli_passed": false,
+        "cli_errors": [
+          "'int' object is not iterable"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "task_files_missing",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [
+          "coverage does not match assigned file_ids"
+        ],
+        "cli_passed": false,
+        "cli_errors": [
+          "coverage does not match assigned file_ids"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "task_file_null",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_exception": "TypeError",
+        "cli_passed": false,
+        "cli_errors": [
+          "'NoneType' object is not subscriptable"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "task_file_string",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_exception": "TypeError",
+        "cli_passed": false,
+        "cli_errors": [
+          "string indices must be integers, not 'str'"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "task_file_list",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_exception": "TypeError",
+        "cli_passed": false,
+        "cli_errors": [
+          "list indices must be integers or slices, not str"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "task_file_number",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_exception": "TypeError",
+        "cli_passed": false,
+        "cli_errors": [
+          "'int' object is not subscriptable"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "task_file_missing_file_id",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_exception": "KeyError",
+        "cli_passed": false,
+        "cli_error": "stdout is not the expected error JSON",
+        "cli_traceback": true,
+        "passed": false
+      },
+      {
+        "name": "task_file_file_id_whitespace",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_file_file_id_empty",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_file_file_id_list",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_exception": "TypeError",
+        "cli_passed": false,
+        "cli_errors": [
+          "unhashable type: 'list'"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "task_file_missing_assigned_scope",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_exception": "KeyError",
+        "cli_passed": false,
+        "cli_error": "stdout is not the expected error JSON",
+        "cli_traceback": true,
+        "passed": false
+      },
+      {
+        "name": "task_file_assigned_scope_whitespace",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_file_assigned_scope_empty",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_file_assigned_scope_list",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "duplicate_task_file_id",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [],
+        "cli_passed": false,
+        "cli_errors": [],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "conflicting_same_check",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [],
+        "cli_passed": false,
+        "cli_errors": [],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "conflicting_same_explicit_scope",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [
+          "$.field_checks[2]: unexpected key search_scope",
+          "$.field_checks[5]: unexpected key search_scope"
+        ],
+        "cli_passed": false,
+        "cli_errors": [
+          "$.field_checks[2]: unexpected key search_scope",
+          "$.field_checks[5]: unexpected key search_scope"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "conflicting_default_and_explicit_scope",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [
+          "$.field_checks[5]: unexpected key search_scope"
+        ],
+        "cli_passed": false,
+        "cli_errors": [
+          "$.field_checks[5]: unexpected key search_scope"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "different_local_scopes_are_allowed",
+        "expected_ok": true,
+        "function_passed": false,
+        "function_errors": [
+          "$.field_checks[2]: unexpected key search_scope",
+          "$.field_checks[5]: unexpected key search_scope"
+        ],
+        "cli_passed": false,
+        "cli_errors": [
+          "$.field_checks[2]: unexpected key search_scope",
+          "$.field_checks[5]: unexpected key search_scope"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "partial_different_local_scopes_are_allowed",
+        "expected_ok": true,
+        "function_passed": false,
+        "function_errors": [
+          "$.field_checks[2]: unexpected key search_scope",
+          "$.field_checks[5]: unexpected key search_scope"
+        ],
+        "cli_passed": false,
+        "cli_errors": [
+          "$.field_checks[2]: unexpected key search_scope",
+          "$.field_checks[5]: unexpected key search_scope"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "different_subject_checks_are_allowed",
+        "expected_ok": true,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "blank_search_scope",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "blank_record_id",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [],
+        "cli_passed": false,
+        "cli_errors": [],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "blank_subject_id",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [],
+        "cli_passed": false,
+        "cli_errors": [],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "blank_coverage_file_id",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "blank_assigned_scope",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [],
+        "cli_passed": false,
+        "cli_errors": [],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "blank_processed_scope",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [],
+        "cli_passed": false,
+        "cli_errors": [],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "blank_unprocessed_scope",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [
+          "F1: incomplete scope cannot be completed"
+        ],
+        "cli_passed": false,
+        "cli_errors": [
+          "F1: incomplete scope cannot be completed"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "blank_subject_locator",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [],
+        "cli_passed": false,
+        "cli_errors": [],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "blank_nonpresent_reason",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [],
+        "cli_passed": false,
+        "cli_errors": [],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "blank_request_file_id",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [],
+        "cli_passed": false,
+        "cli_errors": [],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "blank_blocked_identity",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [],
+        "cli_passed": false,
+        "cli_errors": [],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "fact_other_requires_extension",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [],
+        "cli_passed": false,
+        "cli_errors": [],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "fact_other_with_extension_is_allowed",
+        "expected_ok": true,
+        "function_passed": false,
+        "function_errors": [
+          "$.requests[0]: unexpected key request_type",
+          "$.requests[0]: unexpected key record_ids"
+        ],
+        "cli_passed": false,
+        "cli_errors": [
+          "$.requests[0]: unexpected key request_type",
+          "$.requests[0]: unexpected key record_ids"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "fact_other_unrelated_request_not_sufficient",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [],
+        "cli_passed": false,
+        "cli_errors": [],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "fact_other_unreferenced_extension_not_sufficient",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "fact_other_foreign_record_reference_rejected",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "fact_other_missing_request_record_ids",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [
+          "$.requests[0]: unexpected key request_type"
+        ],
+        "cli_passed": false,
+        "cli_errors": [
+          "$.requests[0]: unexpected key request_type"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "fact_other_extension_file_must_match_record",
+        "expected_ok": false,
+        "function_passed": false,
+        "function_errors": [
+          "$.requests[0]: unexpected key request_type",
+          "$.requests[0]: unexpected key record_ids"
+        ],
+        "cli_passed": false,
+        "cli_errors": [
+          "$.requests[0]: unexpected key request_type",
+          "$.requests[0]: unexpected key record_ids"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "fact_other_global_extension_is_allowed",
+        "expected_ok": true,
+        "function_passed": false,
+        "function_errors": [
+          "$.requests[0]: unexpected key request_type",
+          "$.requests[0]: unexpected key record_ids"
+        ],
+        "cli_passed": false,
+        "cli_errors": [
+          "$.requests[0]: unexpected key request_type",
+          "$.requests[0]: unexpected key record_ids"
+        ],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "legacy_material_request_is_allowed",
+        "expected_ok": true,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "wrong_dictionary_version",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "duplicate_result_top_key",
+        "expected_ok": false,
+        "function_passed": null,
+        "cli_passed": false,
+        "cli_errors": [],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "duplicate_result_nested_key",
+        "expected_ok": false,
+        "function_passed": null,
+        "cli_passed": false,
+        "cli_errors": [],
+        "cli_traceback": false,
+        "passed": false
+      },
+      {
+        "name": "duplicate_task_key",
+        "expected_ok": false,
+        "function_passed": null,
+        "cli_passed": false,
+        "cli_errors": [],
+        "cli_traceback": false,
+        "passed": false
+      }
+    ],
+    "limits": "Synthetic structure/reference tests only; no factual accuracy, OCR, source authenticity or access isolation claim."
+  },
+  "after": {
+    "verified_at_utc": "2026-10-10T06:15:04.153676+00:00",
+    "case_count": 55,
+    "passed_count": 55,
+    "failed_count": 0,
+    "function_case_count": 52,
+    "cli_case_count": 55,
+    "dictionary_version": "1.1",
+    "legacy_suites": [
+      {
+        "suite": "validator_regression.py",
+        "test_count": 16,
+        "passed": true
+      },
+      {
+        "suite": "dictionary_regression.py",
+        "test_count": 18,
+        "passed": true
+      }
+    ],
+    "overall_ok": true,
+    "validator_sha256": "667a5251b0d96f88a17d550a495176ac4dcd52d1d3125732d9cebdff9bdde21a",
+    "cases": [
+      {
+        "name": "valid_existing_payload",
+        "expected_ok": true,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "other_tag_remains_legal",
+        "expected_ok": true,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_top_null",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_top_list",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_top_string",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_top_number",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_top_boolean",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_files_null",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_files_string",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_files_object",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_files_number",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_files_missing",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_file_null",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_file_string",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_file_list",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_file_number",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_file_missing_file_id",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_file_file_id_whitespace",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_file_file_id_empty",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_file_file_id_list",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_file_missing_assigned_scope",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_file_assigned_scope_whitespace",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_file_assigned_scope_empty",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "task_file_assigned_scope_list",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "duplicate_task_file_id",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "conflicting_same_check",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "conflicting_same_explicit_scope",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "conflicting_default_and_explicit_scope",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "different_local_scopes_are_allowed",
+        "expected_ok": true,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "partial_different_local_scopes_are_allowed",
+        "expected_ok": true,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "different_subject_checks_are_allowed",
+        "expected_ok": true,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "blank_search_scope",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "blank_record_id",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "blank_subject_id",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "blank_coverage_file_id",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "blank_assigned_scope",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "blank_processed_scope",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "blank_unprocessed_scope",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "blank_subject_locator",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "blank_nonpresent_reason",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "blank_request_file_id",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "blank_blocked_identity",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "fact_other_requires_extension",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "fact_other_with_extension_is_allowed",
+        "expected_ok": true,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "fact_other_unrelated_request_not_sufficient",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "fact_other_unreferenced_extension_not_sufficient",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "fact_other_foreign_record_reference_rejected",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "fact_other_missing_request_record_ids",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "fact_other_extension_file_must_match_record",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "fact_other_global_extension_is_allowed",
+        "expected_ok": true,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "legacy_material_request_is_allowed",
+        "expected_ok": true,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "wrong_dictionary_version",
+        "expected_ok": false,
+        "function_passed": true,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "duplicate_result_top_key",
+        "expected_ok": false,
+        "function_passed": null,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "duplicate_result_nested_key",
+        "expected_ok": false,
+        "function_passed": null,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      },
+      {
+        "name": "duplicate_task_key",
+        "expected_ok": false,
+        "function_passed": null,
+        "cli_passed": true,
+        "cli_traceback": false,
+        "passed": true
+      }
+    ],
+    "limits": "Synthetic structure/reference tests only; no factual accuracy, OCR, source authenticity or access isolation claim."
+  }
+}

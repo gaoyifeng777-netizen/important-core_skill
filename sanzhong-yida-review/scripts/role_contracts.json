@@ -1,0 +1,80 @@
+{
+  "meeting_schedule": {
+    "tags": [
+      "meeting_info",
+      "agenda_item",
+      "schedule_change",
+      "document_info",
+      "decision",
+      "other"
+    ],
+    "fields": [
+      "meeting_identity",
+      "meeting_time",
+      "agenda",
+      "notice_issued_at",
+      "change"
+    ]
+  },
+  "proposal_extract": {
+    "tags": [
+      "matter_profile",
+      "approval_trace",
+      "financial_info",
+      "risk_info",
+      "condition",
+      "history_reference",
+      "amendment",
+      "other"
+    ],
+    "fields": [
+      "proposal_identity",
+      "requested_action",
+      "approval_trace",
+      "financial_info",
+      "conditions",
+      "history_reference"
+    ]
+  },
+  "meeting_record": {
+    "tags": [
+      "meeting_info",
+      "agenda_item",
+      "attendance",
+      "statement",
+      "voting",
+      "decision",
+      "condition",
+      "follow_up",
+      "other"
+    ],
+    "fields": [
+      "meeting_identity",
+      "attendance",
+      "agenda",
+      "statements",
+      "voting",
+      "decision_conditions",
+      "follow_up"
+    ]
+  },
+  "meeting_minutes": {
+    "tags": [
+      "meeting_info",
+      "decision",
+      "condition",
+      "follow_up",
+      "document_info",
+      "amendment",
+      "other"
+    ],
+    "fields": [
+      "meeting_identity",
+      "agenda_decisions",
+      "conditions",
+      "follow_up",
+      "document_identity",
+      "amendment"
+    ]
+  }
+}

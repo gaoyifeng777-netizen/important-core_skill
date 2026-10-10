@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.1",
+  "dictionary_version": "1.1",
+  "prompt_version": "1.2",
+  "task_id": "RELEASE-meeting_schedule",
+  "run_id": "RELEASE-meeting_schedule-01",
+  "agent_name": "meeting_schedule",
+  "meeting_package_id": "SYNTHETIC-BOARD-7",
+  "status": "completed",
+  "coverage": [
+    {"file_id": "F001", "assigned_scope": "all", "processed_scope": "validation/behavior/fixtures/meeting_schedule.txt 第1—3行（全文）", "unprocessed_scope": null, "read_status": "read", "note": "使用UTF-8读取全文；原件标注为合成验证材料，不代表真实企业。"}
+  ],
+  "subjects": [
+    {"subject_ref": "RELEASE-S-F001-CTX", "file_id": "F001", "subject_type": "document_context", "title_original": null, "number_original": null, "locator": "validation/behavior/fixtures/meeting_schedule.txt 第2行会议通知名称及发出日期；第3行会议计划日期"},
+    {"subject_ref": "RELEASE-S-F001-A01", "file_id": "F001", "subject_type": "agenda_item", "title_original": "项目QL-A1储能一期投资方案", "number_original": "议题一", "locator": "validation/behavior/fixtures/meeting_schedule.txt 第3行，锚点：议题一：项目QL-A1储能一期投资方案"},
+    {"subject_ref": "RELEASE-S-F001-A02", "file_id": "F001", "subject_type": "agenda_item", "title_original": "项目QL-B2物流系统采购", "number_original": "议题二", "locator": "validation/behavior/fixtures/meeting_schedule.txt 第3行，锚点：议题二：项目QL-B2物流系统采购"}
+  ],
+  "records": [
+    {
+      "record_id": "RELEASE-S-R001", "subject_ref": "RELEASE-S-F001-CTX", "tags": ["meeting_info"], "fact_state": "planned",
+      "extracted_fact": "本通知记载所通知的会议为青岚测试有限公司董事会第7次会议。",
+      "values": {"items": [
+        {"field": "meeting.entity", "raw": "青岚测试有限公司", "normalized": null, "qualifiers": {}, "evidence_indexes": [0]},
+        {"field": "meeting.body", "raw": "董事会", "normalized": null, "qualifiers": {}, "evidence_indexes": [0]},
+        {"field": "meeting.number", "raw": "第7次会议", "normalized": null, "qualifiers": {}, "evidence_indexes": [0]}
+      ]},
+      "evidence": [{"file_id": "F001", "locator": "validation/behavior/fixtures/meeting_schedule.txt 第2行", "quote": "青岚测试有限公司董事会第7次会议通知，2025年9月8日发出。"}],
+      "related_record_ids": [], "uncertainty": []
+    },
+    {
+      "record_id": "RELEASE-S-R002", "subject_ref": "RELEASE-S-F001-CTX", "tags": ["document_info"], "fact_state": "recorded_event",
+      "extracted_fact": "本通知记载于2025年9月8日发出。",
+      "values": {"items": [{"field": "notice.issued_at", "raw": "2025年9月8日", "normalized": "2025-09-08", "qualifiers": {"precision": "date"}, "evidence_indexes": [0]}]},
+      "evidence": [{"file_id": "F001", "locator": "validation/behavior/fixtures/meeting_schedule.txt 第2行", "quote": "青岚测试有限公司董事会第7次会议通知，2025年9月8日发出。"}],
+      "related_record_ids": ["RELEASE-S-R001"], "uncertainty": []
+    },
+    {
+      "record_id": "RELEASE-S-R003", "subject_ref": "RELEASE-S-F001-CTX", "tags": ["meeting_info"], "fact_state": "planned",
+      "extracted_fact": "本通知计划于2025年9月10日召开会议。",
+      "values": {"items": [{"field": "meeting.time", "raw": "2025年9月10日", "normalized": "2025-09-10", "qualifiers": {"precision": "date"}, "evidence_indexes": [0]}]},
+      "evidence": [{"file_id": "F001", "locator": "validation/behavior/fixtures/meeting_schedule.txt 第3行开头", "quote": "计划2025年9月10日召开"}],
+      "related_record_ids": ["RELEASE-S-R001"], "uncertainty": []
+    },
+    {
+      "record_id": "RELEASE-S-R004", "subject_ref": "RELEASE-S-F001-A01", "tags": ["agenda_item"], "fact_state": "planned",
+      "extracted_fact": "本通知计划安排议题一：项目QL-A1储能一期投资方案，原文项目编号为QL-A1。",
+      "values": {"items": [
+        {"field": "agenda.title", "raw": "项目QL-A1储能一期投资方案", "normalized": null, "qualifiers": {}, "evidence_indexes": [0]},
+        {"field": "agenda.number", "raw": "议题一", "normalized": null, "qualifiers": {}, "evidence_indexes": [0]},
+        {"field": "matter.code", "raw": "QL-A1", "normalized": null, "qualifiers": {}, "evidence_indexes": [0]}
+      ]},
+      "evidence": [{"file_id": "F001", "locator": "validation/behavior/fixtures/meeting_schedule.txt 第3行，议题一", "quote": "计划2025年9月10日召开，议题一：项目QL-A1储能一期投资方案"}],
+      "related_record_ids": ["RELEASE-S-R003"], "uncertainty": []
+    },
+    {
+      "record_id": "RELEASE-S-R005", "subject_ref": "RELEASE-S-F001-A02", "tags": ["agenda_item"], "fact_state": "planned",
+      "extracted_fact": "本通知计划安排议题二：项目QL-B2物流系统采购，原文项目编号为QL-B2。",
+      "values": {"items": [
+        {"field": "agenda.title", "raw": "项目QL-B2物流系统采购", "normalized": null, "qualifiers": {}, "evidence_indexes": [0]},
+        {"field": "agenda.number", "raw": "议题二", "normalized": null, "qualifiers": {}, "evidence_indexes": [0]},
+        {"field": "matter.code", "raw": "QL-B2", "normalized": null, "qualifiers": {}, "evidence_indexes": [0]}
+      ]},
+      "evidence": [{"file_id": "F001", "locator": "validation/behavior/fixtures/meeting_schedule.txt 第3行，议题二", "quote": "计划2025年9月10日召开，议题一：项目QL-A1储能一期投资方案；议题二：项目QL-B2物流系统采购。"}],
+      "related_record_ids": ["RELEASE-S-R003"], "uncertainty": []
+    }
+  ],
+  "time_index": [
+    {"record_id": "RELEASE-S-R002", "item_index": 0, "event_type": "notice_issued_at", "raw": "2025年9月8日", "normalized": "2025-09-08", "precision": "date"},
+    {"record_id": "RELEASE-S-R003", "item_index": 0, "event_type": "meeting_time", "raw": "2025年9月10日", "normalized": "2025-09-10", "precision": "date"}
+  ],
+  "field_checks": [
+    {"file_id": "F001", "subject_ref": null, "field": "meeting_identity", "state": "present", "record_ids": ["RELEASE-S-R001"], "search_scope": "validation/behavior/fixtures/meeting_schedule.txt 第1—3行（全文）", "reason": null},
+    {"file_id": "F001", "subject_ref": null, "field": "meeting_time", "state": "present", "record_ids": ["RELEASE-S-R003"], "search_scope": "validation/behavior/fixtures/meeting_schedule.txt 第1—3行（全文）", "reason": null},
+    {"file_id": "F001", "subject_ref": null, "field": "agenda", "state": "present", "record_ids": ["RELEASE-S-R004", "RELEASE-S-R005"], "search_scope": "validation/behavior/fixtures/meeting_schedule.txt 第1—3行（全文）", "reason": null},
+    {"file_id": "F001", "subject_ref": null, "field": "notice_issued_at", "state": "present", "record_ids": ["RELEASE-S-R002"], "search_scope": "validation/behavior/fixtures/meeting_schedule.txt 第1—3行（全文）", "reason": null},
+    {"file_id": "F001", "subject_ref": null, "field": "change", "state": "not_found", "record_ids": [], "search_scope": "validation/behavior/fixtures/meeting_schedule.txt 第1—3行（全文）", "reason": "全文未记载更正、补充、增加、撤回、改期、顺序调整或版本差异；仅反映本次获准材料的记载情况。"}
+  ],
+  "candidate_tags": [],
+  "requests": [],
+  "completion_note": "已读取唯一白名单文件的全部3行，保留两个原始议题及其顺序，完成五项必查字段处理。会议及议题为通知计划，发出日期为通知记载；未据此认定实际召开、通过或履行。资料未明示会议地点、独立组织单位、具体钟点、汇报主体或通知文号，未补造这些值。引用均保留相对路径。"
+}

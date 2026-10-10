@@ -1,0 +1,145 @@
+{
+  "task_id": "RELEASE-JUDGE",
+  "run_id": "RELEASE-JUDGE-01",
+  "entity": "青岚测试有限公司（合成）",
+  "period": "2025年度",
+  "meeting_package_ids": [
+    "SYNTHETIC-BOARD-7"
+  ],
+  "objective": "对获准合成事项完成两项控制检查和三项线索扫描，回看关键原文；只输出本次证据支持的结果。",
+  "scope": "获准四路资料所列QL-A1和QL-B2两个事项。CONTROL仅SYN-C10及SYN-C12；LEAD仅L01、L02、L06。不外查、不补写或修改上游事实。G1/G2均为预设合成验证夹具，不是真实企业确认。",
+  "rules": {
+    "path": "validation/behavior/fixtures/confirmed_rules.md",
+    "version": "SYNTHETIC-1",
+    "confirmation_ref": "G2-SYNTHETIC"
+  },
+  "rule_catalog": {
+    "path": "rules/business_rules.md",
+    "version": "1.0.0"
+  },
+  "logic": {
+    "path": "rules/judgment_logic.md",
+    "version": "1.2"
+  },
+  "dictionary": {
+    "path": "references/fact_dictionary.json",
+    "version": "1.1",
+    "guide_path": "references/四路字段字典与串联比较.md"
+  },
+  "extraction_results": [
+    {
+      "agent_name": "meeting_schedule",
+      "run_id": "RELEASE-meeting_schedule-01",
+      "version": "1.1",
+      "path": "validation/behavior/results/meeting_schedule.json",
+      "meeting_package_id": "SYNTHETIC-BOARD-7"
+    },
+    {
+      "agent_name": "proposal_extract",
+      "run_id": "RELEASE-proposal_extract-01",
+      "version": "1.1",
+      "path": "validation/behavior/results/proposal_extract.json",
+      "meeting_package_id": "SYNTHETIC-BOARD-7"
+    },
+    {
+      "agent_name": "meeting_record",
+      "run_id": "RELEASE-meeting_record-01",
+      "version": "1.1",
+      "path": "validation/behavior/results/meeting_record.json",
+      "meeting_package_id": "SYNTHETIC-BOARD-7"
+    },
+    {
+      "agent_name": "meeting_minutes",
+      "run_id": "RELEASE-meeting_minutes-01",
+      "version": "1.1",
+      "path": "validation/behavior/results/meeting_minutes.json",
+      "meeting_package_id": "SYNTHETIC-BOARD-7"
+    }
+  ],
+  "source_files": [
+    {
+      "source_key": "SRC-meeting_schedule",
+      "file_id": "F001",
+      "path": "validation/behavior/fixtures/meeting_schedule.txt",
+      "version": "synthetic-1",
+      "assigned_scope": "all",
+      "origin_map": [],
+      "extraction_refs": [
+        {
+          "run_id": "RELEASE-meeting_schedule-01",
+          "file_id": "F001"
+        }
+      ]
+    },
+    {
+      "source_key": "SRC-proposal_extract",
+      "file_id": "F001",
+      "path": "validation/behavior/fixtures/proposal_extract.txt",
+      "version": "synthetic-1",
+      "assigned_scope": "all",
+      "origin_map": [],
+      "extraction_refs": [
+        {
+          "run_id": "RELEASE-proposal_extract-01",
+          "file_id": "F001"
+        }
+      ]
+    },
+    {
+      "source_key": "SRC-meeting_record",
+      "file_id": "F001",
+      "path": "validation/behavior/fixtures/meeting_record.txt",
+      "version": "synthetic-1",
+      "assigned_scope": "all",
+      "origin_map": [],
+      "extraction_refs": [
+        {
+          "run_id": "RELEASE-meeting_record-01",
+          "file_id": "F001"
+        }
+      ]
+    },
+    {
+      "source_key": "SRC-meeting_minutes",
+      "file_id": "F001",
+      "path": "validation/behavior/fixtures/meeting_minutes.txt",
+      "version": "synthetic-1",
+      "assigned_scope": "all",
+      "origin_map": [],
+      "extraction_refs": [
+        {
+          "run_id": "RELEASE-meeting_minutes-01",
+          "file_id": "F001"
+        }
+      ]
+    },
+    {
+      "source_key": "SRC-policy",
+      "file_id": "RF001",
+      "path": "validation/behavior/fixtures/policy.txt",
+      "version": "synthetic-1",
+      "assigned_scope": "all",
+      "origin_map": [],
+      "extraction_refs": []
+    }
+  ],
+  "lead_scope": {
+    "enabled": true,
+    "method_ids": [
+      "L01",
+      "L02",
+      "L06"
+    ],
+    "matter_scope": "all_in_scope"
+  },
+  "mode": "initial",
+  "supersedes_run_id": null,
+  "revision_request": null,
+  "effective_results": [],
+  "invalidation_log": [],
+  "output_path": "validation/behavior/results/rule_judge.json",
+  "limits": {
+    "batch_scope": "两个事项的指定方法；不启动其他领域执行取证",
+    "retry_limit": 0
+  }
+}

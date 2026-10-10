@@ -1,0 +1,27 @@
+{
+  "task_id": "RELEASE-proposal_extract",
+  "run_id": "RELEASE-proposal_extract-01",
+  "agent_name": "proposal_extract",
+  "meeting_package_id": "SYNTHETIC-BOARD-7",
+  "entity": "青岚测试有限公司（合成）",
+  "period": "2025年度",
+  "mode": "initial",
+  "objective": "提取获准合成材料中记载的事实；保留来源、版本、限定信息及不确定性。",
+  "files": [
+    {
+      "file_id": "F001",
+      "path": "validation/behavior/fixtures/proposal_extract.txt",
+      "document_type": "proposal_extract",
+      "version": "synthetic-1",
+      "assigned_scope": "all",
+      "origin_source": {
+        "source_key": "SRC-proposal_extract",
+        "original_path": "validation/behavior/fixtures/proposal_extract.txt",
+        "version": "synthetic-1"
+      },
+      "origin_map": []
+    }
+  ],
+  "neutral_recheck_question": null,
+  "output_path": "validation/behavior/results/proposal_extract.json"
+}

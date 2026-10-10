@@ -1,0 +1,38 @@
+{
+  "protocol_version": "1.0",
+  "bundle_version": "1.0.0",
+  "project_task_id": null,
+  "task_id": null,
+  "run_id": null,
+  "agent_name": null,
+  "roots": {
+    "skill_root": null,
+    "project_root": null
+  },
+  "runtime": {
+    "mode": null,
+    "context_id": null,
+    "history_inheritance": false,
+    "allowlist_enforcement": null
+  },
+  "role_prompt": {
+    "path": null,
+    "version": null,
+    "sha256": null
+  },
+  "task_input": {
+    "path": null,
+    "sha256": null
+  },
+  "references": [],
+  "output": {
+    "path": null,
+    "format": "json"
+  },
+  "execution": {
+    "state": "not_dispatched",
+    "status": null,
+    "error": null,
+    "result_path": null
+  }
+}

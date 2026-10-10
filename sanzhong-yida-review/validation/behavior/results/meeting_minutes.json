@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.1",
+  "dictionary_version": "1.1",
+  "prompt_version": "1.2",
+  "task_id": "RELEASE-meeting_minutes",
+  "run_id": "RELEASE-meeting_minutes-01",
+  "agent_name": "meeting_minutes",
+  "meeting_package_id": "SYNTHETIC-BOARD-7",
+  "status": "completed",
+  "coverage": [
+    {"file_id":"F001","assigned_scope":"all","processed_scope":"validation/behavior/fixtures/meeting_minutes.txt，第1—4行，全文","unprocessed_scope":null,"read_status":"read","note":"第1行明示为合成验证材料，不代表真实企业。"}
+  ],
+  "subjects": [
+    {"subject_ref":"RELEASE-meeting_minutes-01-S001","file_id":"F001","subject_type":"document_context","title_original":null,"number_original":null,"locator":"validation/behavior/fixtures/meeting_minutes.txt，第1—2行，文件及会议信息"},
+    {"subject_ref":"RELEASE-meeting_minutes-01-S002","file_id":"F001","subject_type":"agenda_item","title_original":"项目QL-A1储能一期投资方案","number_original":"议题一","locator":"validation/behavior/fixtures/meeting_minutes.txt，第3行，议题一"},
+    {"subject_ref":"RELEASE-meeting_minutes-01-S003","file_id":"F001","subject_type":"agenda_item","title_original":"项目QL-B2物流系统采购","number_original":"议题二","locator":"validation/behavior/fixtures/meeting_minutes.txt，第4行，议题二"}
+  ],
+  "records": [
+    {
+      "record_id":"RELEASE-meeting_minutes-01-R001",
+      "subject_ref":"RELEASE-meeting_minutes-01-S001",
+      "tags":["meeting_info"],
+      "fact_state":"recorded_event",
+      "extracted_fact":"本纪要记载会议为青岚测试有限公司董事会第7次会议，实际会议日期为2025年9月10日。",
+      "values":{"items":[
+        {"field":"meeting.entity","raw":"青岚测试有限公司","normalized":null,"qualifiers":{},"evidence_indexes":[0]},
+        {"field":"meeting.body","raw":"董事会","normalized":null,"qualifiers":{},"evidence_indexes":[0]},
+        {"field":"meeting.number","raw":"第7次","normalized":null,"qualifiers":{},"evidence_indexes":[0]},
+        {"field":"meeting.time","raw":"2025年9月10日","normalized":"2025-09-10","qualifiers":{"precision":"date"},"evidence_indexes":[1]}
+      ]},
+      "evidence":[
+        {"file_id":"F001","locator":"validation/behavior/fixtures/meeting_minutes.txt，第2行，首句","quote":"青岚测试有限公司董事会第7次会议纪要，正式签发版，2025年9月11日印发。"},
+        {"file_id":"F001","locator":"validation/behavior/fixtures/meeting_minutes.txt，第2行，记载实际会议日期","quote":"记载实际会议日期：2025年9月10日。"}
+      ],
+      "related_record_ids":[],"uncertainty":[]
+    },
+    {
+      "record_id":"RELEASE-meeting_minutes-01-R002",
+      "subject_ref":"RELEASE-meeting_minutes-01-S001",
+      "tags":["document_info"],
+      "fact_state":"recorded_event",
+      "extracted_fact":"本纪要明示为正式签发版，印发日期为2025年9月11日。",
+      "values":{"items":[
+        {"field":"document.version","raw":"正式签发版","normalized":null,"qualifiers":{},"evidence_indexes":[0]},
+        {"field":"document.issued_at","raw":"2025年9月11日","normalized":"2025-09-11","qualifiers":{"precision":"date"},"evidence_indexes":[0]}
+      ]},
+      "evidence":[{"file_id":"F001","locator":"validation/behavior/fixtures/meeting_minutes.txt，第2行，首句","quote":"青岚测试有限公司董事会第7次会议纪要，正式签发版，2025年9月11日印发。"}],
+      "related_record_ids":["RELEASE-meeting_minutes-01-R001"],"uncertainty":[]
+    },
+    {
+      "record_id":"RELEASE-meeting_minutes-01-R003",
+      "subject_ref":"RELEASE-meeting_minutes-01-S002",
+      "tags":["decision"],
+      "fact_state":"recorded_decision",
+      "extracted_fact":"本纪要议题一为项目QL-A1储能一期投资方案，记载批准投资人民币0.01亿元。",
+      "values":{"items":[
+        {"field":"agenda.title","raw":"项目QL-A1储能一期投资方案","normalized":null,"qualifiers":{},"evidence_indexes":[0]},
+        {"field":"agenda.number","raw":"议题一","normalized":null,"qualifiers":{},"evidence_indexes":[0]},
+        {"field":"matter.code","raw":"QL-A1","normalized":null,"qualifiers":{},"evidence_indexes":[0]},
+        {"field":"matter.project","raw":"项目QL-A1储能一期","normalized":null,"qualifiers":{},"evidence_indexes":[0]},
+        {"field":"decision.content","raw":"批准投资人民币0.01亿元。","normalized":null,"qualifiers":{},"evidence_indexes":[0]},
+        {"field":"financial.amount","raw":"人民币0.01亿元","normalized":"0.01","qualifiers":{"currency":"人民币","unit":"亿元","amount_basis":"投资","scope_raw":"项目QL-A1储能一期投资方案","tax_basis":"unknown","bound":"exact","stage":"decision"},"evidence_indexes":[0]}
+      ]},
+      "evidence":[{"file_id":"F001","locator":"validation/behavior/fixtures/meeting_minutes.txt，第3行，议题一","quote":"议题一：项目QL-A1储能一期投资方案。批准投资人民币0.01亿元。"}],
+      "related_record_ids":[],"uncertainty":[]
+    },
+    {
+      "record_id":"RELEASE-meeting_minutes-01-R004",
+      "subject_ref":"RELEASE-meeting_minutes-01-S003",
+      "tags":["decision"],
+      "fact_state":"recorded_decision",
+      "extracted_fact":"本纪要议题二为项目QL-B2物流系统采购，记载决定为同意立即采购。",
+      "values":{"items":[
+        {"field":"agenda.title","raw":"项目QL-B2物流系统采购","normalized":null,"qualifiers":{},"evidence_indexes":[0]},
+        {"field":"agenda.number","raw":"议题二","normalized":null,"qualifiers":{},"evidence_indexes":[0]},
+        {"field":"matter.code","raw":"QL-B2","normalized":null,"qualifiers":{},"evidence_indexes":[0]},
+        {"field":"matter.project","raw":"项目QL-B2物流系统","normalized":null,"qualifiers":{},"evidence_indexes":[0]},
+        {"field":"decision.content","raw":"同意立即采购","normalized":null,"qualifiers":{},"evidence_indexes":[0]},
+        {"field":"follow_up.action","raw":"立即采购","normalized":null,"qualifiers":{},"evidence_indexes":[0]},
+        {"field":"follow_up.due_at","raw":"立即","normalized":null,"qualifiers":{"precision":"relative"},"evidence_indexes":[0]}
+      ]},
+      "evidence":[{"file_id":"F001","locator":"validation/behavior/fixtures/meeting_minutes.txt，第4行，议题二","quote":"议题二：项目QL-B2物流系统采购。决定：同意立即采购。"}],
+      "related_record_ids":[],"uncertainty":[]
+    }
+  ],
+  "time_index":[
+    {"record_id":"RELEASE-meeting_minutes-01-R001","item_index":3,"event_type":"meeting_time","raw":"2025年9月10日","normalized":"2025-09-10","precision":"date"},
+    {"record_id":"RELEASE-meeting_minutes-01-R002","item_index":1,"event_type":"document_issued_at","raw":"2025年9月11日","normalized":"2025-09-11","precision":"date"},
+    {"record_id":"RELEASE-meeting_minutes-01-R004","item_index":6,"event_type":"follow_up_due_at","raw":"立即","normalized":null,"precision":"relative"}
+  ],
+  "field_checks":[
+    {"file_id":"F001","subject_ref":null,"field":"meeting_identity","state":"present","record_ids":["RELEASE-meeting_minutes-01-R001"],"search_scope":"validation/behavior/fixtures/meeting_minutes.txt，第1—4行，全文","reason":null},
+    {"file_id":"F001","subject_ref":null,"field":"agenda_decisions","state":"present","record_ids":["RELEASE-meeting_minutes-01-R003","RELEASE-meeting_minutes-01-R004"],"search_scope":"validation/behavior/fixtures/meeting_minutes.txt，第1—4行，全文","reason":null},
+    {"file_id":"F001","subject_ref":null,"field":"conditions","state":"not_found","record_ids":[],"search_scope":"validation/behavior/fixtures/meeting_minutes.txt，第1—4行，全文","reason":"已读全文未见决定附加前提、限制或例外的记载。"},
+    {"file_id":"F001","subject_ref":null,"field":"follow_up","state":"present","record_ids":["RELEASE-meeting_minutes-01-R004"],"search_scope":"validation/behavior/fixtures/meeting_minutes.txt，第1—4行，全文","reason":"议题二记载同意立即采购；未载明责任主体。"},
+    {"file_id":"F001","subject_ref":null,"field":"document_identity","state":"present","record_ids":["RELEASE-meeting_minutes-01-R002"],"search_scope":"validation/behavior/fixtures/meeting_minutes.txt，第1—4行，全文","reason":"记载正式签发版及印发日期；未见文号、具体签发人或分送信息。"},
+    {"file_id":"F001","subject_ref":null,"field":"amendment","state":"not_found","record_ids":[],"search_scope":"validation/behavior/fixtures/meeting_minutes.txt，第1—4行，全文","reason":"已读全文未见补充、更正或替代关系。正式签发版字样不用于推定其他版本失效。"}
+  ],
+  "candidate_tags":[],
+  "requests":[],
+  "completion_note":"已处理唯一白名单文件全文第1—4行，保留两个议题的来源内顺序及决定；会议日期与印发日期分别记录。原文未载明地点、主持人、参会人员及表决数量，未补写。事实仅为合成纪要的记载，未判断现实执行或程序合规。"
+}
