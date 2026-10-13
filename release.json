@@ -1,16 +1,52 @@
 {
-  "version": "1.0.0",
+  "version": "1.2.0",
+  "previous_version": "1.0.0",
   "status": "release",
-  "date": "2026-10-10",
+  "date": "2026-10-13",
   "entry": "sanzhong-yida-review/SKILL.md",
-  "archive": "dist/sanzhong-yida-review-1.0.0.zip",
-  "archive_sha256": "80c89ff28592f201afa0a99b2d8f7f37ad682b873ba09233d1ee89c6278f6c8f",
-  "skill_manifest_sha256": "3b4a5f1df08c0c58651ac1195207331dfb82e8f3017c5ec501edd72f8d539783",
+  "archive": "dist/sanzhong-yida-review-1.2.0-sandbox.zip",
+  "archive_sha256": "53af30d5017e0ff5f67cb158276d8ff53a4df71b9a198ae6c9072c08599bcbf7",
+  "skill_manifest_sha256": "107f1e1b2bcbb5733c5fab1e4a26059f48443b5e512af97eac55cb2e3cc8e14e",
+  "runtime": {
+    "control": "LangGraph StateGraph with SQLite checkpoints",
+    "graph_nodes": 2,
+    "business_roles": 9,
+    "professional_execution": "external per-task Windows AppContainer agent loop",
+    "professional_parallelism": "external executor up to four; graph adoption single writer",
+    "cross_project_semantic_memory": false
+  },
   "verification": {
-    "regression_cases": 89,
+    "original_regression_cases": 89,
+    "control_sandbox_provenance_gateway_regression_cases": 255,
     "extraction_roles": 4,
-    "judge": "not_completed_service_usage_limit",
-    "final_independent_review": "not_completed_service_usage_limit",
-    "other_model_runtimes": "not_tested"
+    "extraction_actual_model_final_adopted": 4,
+    "extraction_actual_model_initial_parallel_success": 3,
+    "extraction_actual_model_retry": "meeting_record server overload followed by successful independent retry",
+    "own_input_read_success": 24,
+    "cross_role_or_host_read_denied": 96,
+    "input_write_denied": 120,
+    "customer_materials": false,
+    "judge_full_actual_model_chain": "not_verified",
+    "final_independent_business_review_chain": "not_verified",
+    "ocr_visual_old_office": "not_verified",
+    "other_model_runtimes": "not_tested",
+    "evidence_summary": "sanzhong-yida-review/validation/sandbox/acceptance_summary_20261013.json",
+    "evidence_note": "Synthetic verification snapshot from this Windows host; local audit references are not bundled execution logs."
+  },
+  "historical_release": {
+    "version": "1.0.0",
+    "status": "release",
+    "date": "2026-10-10",
+    "entry": "sanzhong-yida-review/SKILL.md",
+    "archive": "dist/sanzhong-yida-review-1.0.0.zip",
+    "archive_sha256": "80c89ff28592f201afa0a99b2d8f7f37ad682b873ba09233d1ee89c6278f6c8f",
+    "skill_manifest_sha256": "3b4a5f1df08c0c58651ac1195207331dfb82e8f3017c5ec501edd72f8d539783",
+    "verification": {
+      "regression_cases": 89,
+      "extraction_roles": 4,
+      "judge": "not_completed_service_usage_limit",
+      "final_independent_review": "not_completed_service_usage_limit",
+      "other_model_runtimes": "not_tested"
+    }
   }
 }

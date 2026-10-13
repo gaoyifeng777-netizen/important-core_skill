@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-13",
+  "scope": "Synthetic materials and execution boundaries; no customer documents or full business-workflow acceptance.",
+  "evidence_root": "C:/Users/18583/Documents/object 2/skill_work",
+  "os_isolation": {
+    "status": "verified_on_this_windows_host",
+    "mechanism": "whole-process Windows AppContainer with independent role SIDs and protected input/output ACLs",
+    "switching_and_parallel_matrix": {
+      "launched_parent_processes": 12,
+      "parent_and_child_process_records": 24,
+      "successful_own_input_reads": 24,
+      "cross_role_or_broker_reads_denied_native_winerror_5": 96,
+      "input_write_attempts_denied": 120,
+      "all_tokens_appcontainer": true,
+      "deleted_profiles": 4,
+      "evidence": "sandbox_backend_probe_20261013/run-20261013-140802-6ed82008/report.json"
+    },
+    "additional_kernel_boundaries": {
+      "foreign_role_sid_launch_denied_winerror": 87,
+      "own_and_peer_dacl_changes_denied_winerror": 5,
+      "timeout_parent_and_descendant_terminated": true,
+      "evidence": "sandbox_backend_probe_20261013/extended-20261013-141038-ea15086a/report.json"
+    },
+    "full_worker_tools": {
+      "registered_tools": ["read_file", "list_directory", "write_file", "run_command"],
+      "kernel_checks_passed": 13,
+      "model_inference_calls": 0,
+      "classification_note": "Original report preserved; Python errno 13 and native WinError 5 are both actual OS access denial.",
+      "evidence": "sandbox_backend_probe_20261013/worker-kernel-20261013-144457-5c66fe80/classification.json"
+    },
+    "network_capability_inheritance": {
+      "parent_and_ordinary_child_capabilities": [],
+      "same_sid_zero_capability_positive_control_created": true,
+      "internet_client_capability_addition_created": false,
+      "internet_client_capability_addition_winerror": 87,
+      "network_operations": 0,
+      "profile_deleted": true,
+      "evidence": "sandbox_backend_probe_20261013/capabilities-20261013-145421-0c7514a4/report.json"
+    },
+    "readers": {
+      "own_docx_xlsx_pptx_pdf_text_readable": true,
+      "peer_file_opens_denied_native_winerror_5": 4,
+      "own_pdf_physical_page_1_rendered_png": true,
+      "render_pixels": [612, 792],
+      "peer_pdfium_byte_read_denied": true,
+      "runtime_files": 926,
+      "runtime_bytes": 38137041,
+      "real_model_calls": 0,
+      "automatic_ocr_or_model_visual_input_acceptance": "not_verified",
+      "evidence": "sandbox_backend_probe_20261013/readers-20261013-151507-810049f1/report.json"
+    }
+  },
+  "independent_audit_tests": {
+    "passed": 14,
+    "real_model_calls": 0,
+    "coverage": "Authorization, source projection, junctions, read-only input metadata, inaccessible host receipts, remote item-reference rejection, hardlink import rejection, and scripted real-kernel conflicting-output rejection.",
+    "scripted_inference_is_not_actual_model_execution": true,
+    "snapshot_note": "This log predates the short temporary-workspace patch; the latest path/ACL patch received a read-only review and one successful authenticated meeting_record retry is separately evidenced below.",
+    "evidence": "sandbox_security_audit_final_20261013_4.log"
+  },
+  "authenticated_model_acceptance": {
+    "material_type": "synthetic UTF-8 text fixtures",
+    "model": "gpt-6.1-sol",
+    "initial_parallel_roles_succeeded": 3,
+    "initial_parallel_roles_attempted": 4,
+    "initial_parallel_report_all_passed": false,
+    "initial_success_roles": ["meeting_schedule", "proposal_extract", "meeting_minutes"],
+    "initial_evidence": "sandbox_model_acceptance_30adecd7/model_acceptance_report.json",
+    "meeting_record_prior_failure": {
+      "status": "blocked_and_not_adopted",
+      "failure_event": "error",
+      "failure_code": "server_is_overloaded",
+      "evidence": "sandbox_model_acceptance_30adecd7/project/sandbox_runs/meeting_record-c0df094d531d4f90906c7b7131d46d27/d3d3be9013e34beea8593f3b5ee7df72/host/failed_attempt.json"
+    },
+    "meeting_record_independent_retry": {
+      "attempt_id": "7ed880422b0349bd89742a5d630d8d9d",
+      "pid": 8836,
+      "task_status": "completed",
+      "business_status": "completed",
+      "handoff_passed": true,
+      "inference_verification": "authenticated_remote_model",
+      "preflight_checks_passed": 16,
+      "network_capability": null,
+      "profile_deleted": true,
+      "credentials_copied": false,
+      "proxy_exception_added": false,
+      "evidence": "sandbox_model_record_retry4_20261013.json",
+      "audit": "sandbox_model_acceptance_30adecd7/project/sandbox_runs/meeting_record-c0df094d531d4f90906c7b7131d46d27/7ed880422b0349bd89742a5d630d8d9d/host/execution_audit.json"
+    },
+    "final_adopted_roles": 4,
+    "final_required_roles": 4,
+    "pending_extraction_tasks": 0,
+    "all_four_completed_in_one_initial_parallel_attempt": false,
+    "g1_confirmation_is_a_software_fixture": true,
+    "customer_business_acceptance": false,
+    "rule_judge_and_quality_review_full_model_chain_acceptance": false
+  },
+  "latest_path_acl_review": {
+    "status": "read_only_review_completed_no_reproducible_security_blocker",
+    "short_workspace": "Fresh tempfile.mkdtemp sz-* role tree; source-to-copy mappings and original locators retained.",
+    "persistent_host_archive": "Project sandbox_runs/task/attempt/host; reader_manifest and execution records persist there.",
+    "acl_scope": "Only newly created marked role tree and host directory; no source, project-ancestor or user-ancestor ACL changes.",
+    "host_io_root": "Explicit trusted-caller host directory with stage marker; only direct child standard-stream files accepted; only explicit stdin/stdout/stderr handles inherited.",
+    "staging_failure": "Captured as staging_failed with a host failure record and retained-workspace cleanup record; no shared-tool fallback.",
+    "cleanup": "Finish closes the process Job; temporary AppContainer profile is deleted. Role workspace is deliberately retained for audit, so no recursive deletion is claimed.",
+    "file_scope": "Partial scopes require physically separate whole-file reading artifacts; mixed originals are not silently mounted.",
+    "core_boundary": "Worker has no credentials or network; host exposes model inference only; raw native host tools are not registered.",
+    "limitations": [
+      "The trusted host and OS are within the trust boundary.",
+      "Short temporary role workspaces remain on disk for audit until an explicit verified cleanup operation.",
+      "PDF rendering is separately verified; automatic OCR and visual model delivery are not accepted by these tests.",
+      "Synthetic extraction adoption does not prove customer facts, complete evaluation logic, independent business review, or final human approval."
+    ]
+  }
+}

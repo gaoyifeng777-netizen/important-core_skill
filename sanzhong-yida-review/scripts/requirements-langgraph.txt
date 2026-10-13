@@ -1,0 +1,5 @@
+langgraph==1.2.15
+langgraph-checkpoint-sqlite==3.1.2
+langchain-openai==1.7.1
+httpx[socks]>=0.28,<0.29
+socksio==1.0.0

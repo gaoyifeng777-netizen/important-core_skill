@@ -8,7 +8,6 @@ import subprocess
 import sys
 sys.dont_write_bytecode=True
 ROOT=Path(__file__).resolve().parents[1]
-BASE=ROOT.parent
 ROLES=['meeting_schedule','proposal_extract','meeting_record','meeting_minutes']
 def unique_object(pairs):
     result={}
@@ -26,7 +25,9 @@ def check(output=None):
     for role_name in all_roles:
         if not (ROOT/f'prompts/{role_name}.md').is_file(): failures.append(f'missing prompt {role_name}')
     entry=(ROOT/'SKILL.md').read_text(encoding='utf-8')
-    if not entry.startswith('---\nname: sanzhong-yida-review\n') or 'version: "1.0.0"' not in entry:
+    version_match=re.search(r'^  version: "(\d+\.\d+\.\d+)"$',entry,re.M)
+    bundle_version=version_match.group(1) if version_match else None
+    if not entry.startswith('---\nname: sanzhong-yida-review\n') or bundle_version is None:
         failures.append('entry format/version mismatch')
     dictionary=json.loads((ROOT/'references/fact_dictionary.json').read_text(encoding='utf-8'))
     all_fields=set(dictionary['fields'])
@@ -36,11 +37,11 @@ def check(output=None):
         expected={k for k,v in dictionary['fields'].items() if role in v['roles']}
         if actual!=expected: failures.append(f'{role}: dictionary table mismatch')
         if '"schema_version": "1.1"' not in content: failures.append(f'{role}: schema version missing')
-    for p in BASE.rglob('*.json'):
+    for p in ROOT.rglob('*.json'):
         if '__pycache__' in p.parts: continue
         try: parse_json(p.read_text(encoding='utf-8'))
         except Exception as exc: failures.append(f'{p.name}: {exc}')
-    for p in BASE.rglob('*.md'):
+    for p in ROOT.rglob('*.md'):
         txt=p.read_text(encoding='utf-8')
         if re.search(r'(?i)\b[A-Z]:[/\\]|/Users/|/home/[^/]+/',txt): failures.append(f'{p.name}: machine-specific path')
         if re.search(r'(?i)(?:AI|人工智能|ChatGPT|Codex)\s*(?:编辑|撰写|生成|编写)|研究Agent取得',txt): failures.append(f'{p.name}: editing attribution')
@@ -82,6 +83,7 @@ def check(output=None):
         failures.append('manifest.json missing')
     else:
         manifest=parse_json(manifest_path.read_text(encoding='utf-8'))
+        if manifest.get('bundle_version')!=bundle_version: failures.append('manifest bundle version mismatch')
         entries={x['path']:x for x in manifest['files']}
         actual={p.relative_to(ROOT).as_posix() for p in ROOT.rglob('*') if p.is_file() and p!=manifest_path and '__pycache__' not in p.parts}
         if actual!=set(entries): failures.append('manifest inventory mismatch')
@@ -94,7 +96,7 @@ def check(output=None):
         res=subprocess.run([sys.executable,'-B','-X','utf8',str(ROOT/'validation/dictionary'/filename)],capture_output=True,text=True,encoding='utf-8')
         tests.append({'file':filename,'exit_code':res.returncode,'output':res.stdout+res.stderr})
         if res.returncode: failures.append(f'{filename}: tests failed')
-    result={'bundle_version':'1.0.0','schema_version':'1.1','judge_schema_version':'1.3','dictionary_version':dictionary['dictionary_version'],
+    result={'bundle_version':bundle_version,'schema_version':'1.1','judge_schema_version':'1.3','dictionary_version':dictionary['dictionary_version'],
             'dictionary_fields':len(all_fields),'role_prompts':9,'json_blocks':json_blocks,'relative_links':links,
             'control_cards':sum(x.startswith('C') for x in catalog_ids),
             'lead_methods':sum(x.startswith('L') for x in catalog_ids),

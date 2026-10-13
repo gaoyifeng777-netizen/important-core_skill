@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2250" height="2170" viewBox="0 0 2250 2170">
+<title>三重一大现行运行逻辑图 1.2.0</title>
+<desc>九角色业务流程、人工确认、逐任务Windows AppContainer隔离和持久化状态控制。</desc>
+<rect width="2250" height="2170" fill="#F5F8FC"/>
+<text x="45" y="86" font-family="Microsoft YaHei, sans-serif" font-size="54" font-weight="700" fill="#17314D" text-anchor="start">“三重一大”现行运行逻辑</text>
+<text x="48" y="134" font-family="Microsoft YaHei, sans-serif" font-size="29" font-weight="400" fill="#52677E" text-anchor="start">九角色流程  ·  人工确认  ·  逐任务独立隔离</text>
+<rect x="1990" y="40" width="215" height="68" rx="18" fill="#E6EDF7" stroke="#D3DFEE" stroke-width="2"/>
+<text x="2097" y="87" font-family="Microsoft YaHei, sans-serif" font-size="31" font-weight="700" fill="#2763A1" text-anchor="middle">1.2.0</text>
+<rect x="40" y="190" width="1460" height="110" rx="20" fill="#EAF0F8" stroke="#BACEE4" stroke-width="2"/>
+<text x="770" y="235" font-family="Microsoft YaHei, sans-serif" font-size="36" font-weight="700" fill="#17314D" text-anchor="middle">用户粗分资料</text>
+<text x="770" y="277" font-family="Microsoft YaHei, sans-serif" font-size="27" font-weight="400" fill="#52677E" text-anchor="middle">制度规则、会议台账、通知、过程、决议、其他或混合资料；原目录可沿用</text>
+<polyline points="770,300 770,345" fill="none" stroke="#2763A1" stroke-width="4"/>
+<polygon points="770.00,345.00 778.00,329.00 762.00,329.00" fill="#2763A1"/>
+<rect x="40" y="345" width="1460" height="120" rx="20" fill="#DBE9F8" stroke="#86ACD1" stroke-width="2"/>
+<text x="770" y="396" font-family="Microsoft YaHei, sans-serif" font-size="36" font-weight="700" fill="#17314D" text-anchor="middle">主控：只编排、检查、采用</text>
+<text x="770" y="439" font-family="Microsoft YaHei, sans-serif" font-size="27" font-weight="400" fill="#52677E" text-anchor="middle">建档、分派、收集和汇总；不补写事实、不代替专业判定</text>
+<polyline points="770,465 770,490 380,490 380,525" fill="none" stroke="#2763A1" stroke-width="4"/>
+<polygon points="380.00,525.00 388.00,509.00 372.00,509.00" fill="#2763A1"/>
+<polyline points="770,465 770,490 1140,490 1140,525" fill="none" stroke="#2763A1" stroke-width="4"/>
+<polygon points="1140.00,525.00 1148.00,509.00 1132.00,509.00" fill="#2763A1"/>
+<rect x="40" y="525" width="680" height="110" rx="20" fill="#FFFFFF" stroke="#AFC7DF" stroke-width="2"/>
+<text x="380" y="572" font-family="Microsoft YaHei, sans-serif" font-size="34" font-weight="700" fill="#2763A1" text-anchor="middle">资料准备</text>
+<text x="380" y="613" font-family="Microsoft YaHei, sans-serif" font-size="27" font-weight="400" fill="#52677E" text-anchor="middle">核对分类、来源、读取范围与完整阅读件</text>
+<rect x="800" y="525" width="700" height="110" rx="20" fill="#FFFFFF" stroke="#C3B6DD" stroke-width="2"/>
+<text x="1150" y="572" font-family="Microsoft YaHei, sans-serif" font-size="34" font-weight="700" fill="#7353A4" text-anchor="middle">依据准备</text>
+<text x="1150" y="613" font-family="Microsoft YaHei, sans-serif" font-size="27" font-weight="400" fill="#52677E" text-anchor="middle">提取制度规则候选、适用范围与具体疑问</text>
+<polyline points="380,635 380,680" fill="none" stroke="#2763A1" stroke-width="4"/>
+<polygon points="380.00,680.00 388.00,664.00 372.00,664.00" fill="#2763A1"/>
+<polyline points="1150,635 1150,680" fill="none" stroke="#7353A4" stroke-width="4"/>
+<polygon points="1150.00,680.00 1158.00,664.00 1142.00,664.00" fill="#7353A4"/>
+<rect x="40" y="680" width="680" height="135" rx="20" fill="#FFF5DA" stroke="#D9B966" stroke-width="2"/>
+<text x="70" y="731" font-family="Microsoft YaHei, sans-serif" font-size="29" font-weight="700" fill="#6C521E" text-anchor="start">G1  第一步：确认资料范围与处理方案</text>
+<text x="70" y="773" font-family="Microsoft YaHei, sans-serif" font-size="26" font-weight="400" fill="#7B6843" text-anchor="start">用户确认具体资料、阅读范围、版本与处理方式</text>
+<rect x="800" y="680" width="700" height="135" rx="20" fill="#F0EAF8" stroke="#B9A3D5" stroke-width="2"/>
+<text x="830" y="731" font-family="Microsoft YaHei, sans-serif" font-size="29" font-weight="700" fill="#7353A4" text-anchor="start">G2  第二步：确认测试依据与适用范围</text>
+<text x="830" y="773" font-family="Microsoft YaHei, sans-serif" font-size="26" font-weight="400" fill="#52677E" text-anchor="start">用户确认具体规则、对应主体期间与采用边界</text>
+<polyline points="380,815 380,845 770,845 770,885" fill="none" stroke="#2763A1" stroke-width="4"/>
+<polygon points="770.00,885.00 778.00,869.00 762.00,869.00" fill="#2763A1"/>
+<polyline points="1150,815 1150,840 1530,840 1530,1495 1500,1495" fill="none" stroke="#7353A4" stroke-width="3" stroke-dasharray="9 6"/>
+<polygon points="1500.00,1495.00 1516.00,1503.00 1516.00,1487.00" fill="#7353A4"/>
+<text x="1210" y="870" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="400" fill="#7353A4" text-anchor="middle">有效 G2 规则仅交判定与复核</text>
+<rect x="25" y="885" width="1490" height="305" rx="20" fill="#EDF6F4" stroke="#B2D4C9" stroke-width="2"/>
+<text x="770" y="932" font-family="Microsoft YaHei, sans-serif" font-size="34" font-weight="700" fill="#287D68" text-anchor="middle">四路事实识别｜独立并行</text>
+<rect x="40" y="955" width="340" height="165" rx="16" fill="#FFFFFF" stroke="#92BCAD" stroke-width="2"/>
+<text x="210" y="1002" font-family="Microsoft YaHei, sans-serif" font-size="34" font-weight="700" fill="#287D68" text-anchor="middle">安排识别</text>
+<text x="210" y="1053" font-family="Microsoft YaHei, sans-serif" font-size="27" font-weight="400" fill="#52677E" text-anchor="middle">通知、议事清单</text>
+<text x="210" y="1092" font-family="Microsoft YaHei, sans-serif" font-size="27" font-weight="400" fill="#52677E" text-anchor="middle">议程和调整</text>
+<rect x="413" y="955" width="340" height="165" rx="16" fill="#FFFFFF" stroke="#92BCAD" stroke-width="2"/>
+<text x="583" y="1002" font-family="Microsoft YaHei, sans-serif" font-size="34" font-weight="700" fill="#287D68" text-anchor="middle">议案识别</text>
+<text x="583" y="1053" font-family="Microsoft YaHei, sans-serif" font-size="27" font-weight="400" fill="#52677E" text-anchor="middle">议案、申请审批</text>
+<text x="583" y="1092" font-family="Microsoft YaHei, sans-serif" font-size="27" font-weight="400" fill="#52677E" text-anchor="middle">相关附件</text>
+<rect x="786" y="955" width="340" height="165" rx="16" fill="#FFFFFF" stroke="#92BCAD" stroke-width="2"/>
+<text x="956" y="1002" font-family="Microsoft YaHei, sans-serif" font-size="34" font-weight="700" fill="#287D68" text-anchor="middle">过程识别</text>
+<text x="956" y="1053" font-family="Microsoft YaHei, sans-serif" font-size="27" font-weight="400" fill="#52677E" text-anchor="middle">原始记录、发言</text>
+<text x="956" y="1092" font-family="Microsoft YaHei, sans-serif" font-size="27" font-weight="400" fill="#52677E" text-anchor="middle">表决记录</text>
+<rect x="1159" y="955" width="340" height="165" rx="16" fill="#FFFFFF" stroke="#92BCAD" stroke-width="2"/>
+<text x="1329" y="1002" font-family="Microsoft YaHei, sans-serif" font-size="34" font-weight="700" fill="#287D68" text-anchor="middle">决议识别</text>
+<text x="1329" y="1053" font-family="Microsoft YaHei, sans-serif" font-size="27" font-weight="400" fill="#52677E" text-anchor="middle">正式纪要、决议</text>
+<text x="1329" y="1092" font-family="Microsoft YaHei, sans-serif" font-size="27" font-weight="400" fill="#52677E" text-anchor="middle">补正材料</text>
+<text x="770" y="1166" font-family="Microsoft YaHei, sans-serif" font-size="26" font-weight="400" fill="#287D68" text-anchor="middle">各路只接收本角色指令＋获准资料＋中性任务，不接收其他路成果或判定规则</text>
+<polyline points="210,1120 210,1215 770,1215 770,1250" fill="none" stroke="#287D68" stroke-width="3"/>
+<polygon points="770.00,1250.00 778.00,1234.00 762.00,1234.00" fill="#287D68"/>
+<polyline points="583,1120 583,1215 770,1215 770,1250" fill="none" stroke="#287D68" stroke-width="3"/>
+<polygon points="770.00,1250.00 778.00,1234.00 762.00,1234.00" fill="#287D68"/>
+<polyline points="956,1120 956,1215 770,1215 770,1250" fill="none" stroke="#287D68" stroke-width="3"/>
+<polygon points="770.00,1250.00 778.00,1234.00 762.00,1234.00" fill="#287D68"/>
+<polyline points="1329,1120 1329,1215 770,1215 770,1250" fill="none" stroke="#287D68" stroke-width="3"/>
+<polygon points="770.00,1250.00 778.00,1234.00 762.00,1234.00" fill="#287D68"/>
+<rect x="40" y="1250" width="1460" height="130" rx="20" fill="#E5EEF8" stroke="#9AB7D5" stroke-width="2"/>
+<text x="770" y="1298" font-family="Microsoft YaHei, sans-serif" font-size="35" font-weight="700" fill="#2763A1" text-anchor="middle">主控完整结构交接检查</text>
+<text x="770" y="1341" font-family="Microsoft YaHei, sans-serif" font-size="27" font-weight="400" fill="#52677E" text-anchor="middle">核对身份、来源引用、覆盖与完整结构；返工仅限受影响项，保留有效成果</text>
+<polyline points="40,1315 10,1315 10,1030 25,1030" fill="none" stroke="#A94B4B" stroke-width="3" stroke-dasharray="9 6"/>
+<polygon points="25.00,1030.00 9.00,1022.00 9.00,1038.00" fill="#A94B4B"/>
+<text x="72" y="1231" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#A94B4B" text-anchor="start">限定项返工</text>
+<polyline points="770,1380 770,1430" fill="none" stroke="#2763A1" stroke-width="4"/>
+<polygon points="770.00,1430.00 778.00,1414.00 762.00,1414.00" fill="#2763A1"/>
+<rect x="40" y="1430" width="1460" height="145" rx="20" fill="#E9E4F3" stroke="#B6A6CF" stroke-width="2"/>
+<text x="770" y="1480" font-family="Microsoft YaHei, sans-serif" font-size="37" font-weight="700" fill="#7353A4" text-anchor="middle">判定</text>
+<text x="770" y="1523" font-family="Microsoft YaHei, sans-serif" font-size="29" font-weight="400" fill="#243B53" text-anchor="middle">读取：四路完整采用成果＋对应原件＋当前有效 G2 规则</text>
+<text x="770" y="1557" font-family="Microsoft YaHei, sans-serif" font-size="25" font-weight="400" fill="#52677E" text-anchor="middle">逐项判定与自查；待核线索不直接认定为缺陷</text>
+<polyline points="770,1575 770,1640" fill="none" stroke="#2763A1" stroke-width="4"/>
+<polygon points="770.00,1640.00 778.00,1624.00 762.00,1624.00" fill="#2763A1"/>
+<rect x="40" y="1640" width="1460" height="150" rx="20" fill="#E3F2EC" stroke="#94BEAD" stroke-width="2"/>
+<text x="770" y="1690" font-family="Microsoft YaHei, sans-serif" font-size="36" font-weight="700" fill="#287D68" text-anchor="middle">每批独立业务复核</text>
+<text x="770" y="1734" font-family="Microsoft YaHei, sans-serif" font-size="28" font-weight="400" fill="#243B53" text-anchor="middle">默认全范围；逐项接受、退回或标明限制，退回仅重做限定项</text>
+<text x="770" y="1771" font-family="Microsoft YaHei, sans-serif" font-size="25" font-weight="400" fill="#52677E" text-anchor="middle">抽样或缩减范围先取得实际人工确认</text>
+<polyline points="40,1715 10,1715 10,1503 40,1503" fill="none" stroke="#A94B4B" stroke-width="3" stroke-dasharray="9 6"/>
+<polygon points="40.00,1503.00 24.00,1495.00 24.00,1511.00" fill="#A94B4B"/>
+<text x="72" y="1617" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#A94B4B" text-anchor="start">限定项退回并重新复核</text>
+<polyline points="770,1790 770,1860" fill="none" stroke="#2763A1" stroke-width="4"/>
+<polygon points="770.00,1860.00 778.00,1844.00 762.00,1844.00" fill="#2763A1"/>
+<rect x="40" y="1860" width="1460" height="145" rx="20" fill="#FFF5DA" stroke="#D9B966" stroke-width="2"/>
+<text x="770" y="1915" font-family="Microsoft YaHei, sans-serif" font-size="37" font-weight="700" fill="#725321" text-anchor="middle">最终人工签认 → 成果</text>
+<text x="770" y="1962" font-family="Microsoft YaHei, sans-serif" font-size="27" font-weight="400" fill="#7B6843" text-anchor="middle">评价人员认定问题、缺陷定级与最终签认；交付已做、未做和受限范围</text>
+<rect x="1590" y="190" width="615" height="710" rx="20" fill="#FFFFFF" stroke="#BFCFE0" stroke-width="2"/>
+<text x="1625" y="244" font-family="Microsoft YaHei, sans-serif" font-size="34" font-weight="700" fill="#17314D" text-anchor="start">每次专业任务独立隔离</text>
+<text x="1625" y="298" font-family="Microsoft YaHei, sans-serif" font-size="28" font-weight="400" fill="#243B53" text-anchor="start">新 Windows AppContainer SID</text>
+<text x="1625" y="345" font-family="Microsoft YaHei, sans-serif" font-size="28" font-weight="400" fill="#243B53" text-anchor="start">新进程＋全新模型上下文</text>
+<text x="1625" y="392" font-family="Microsoft YaHei, sans-serif" font-size="28" font-weight="400" fill="#243B53" text-anchor="start">自己的 input 只读、output 可写</text>
+<text x="1625" y="439" font-family="Microsoft YaHei, sans-serif" font-size="28" font-weight="400" fill="#243B53" text-anchor="start">其他角色／主控私有区不可读</text>
+<text x="1625" y="506" font-family="Microsoft YaHei, sans-serif" font-size="30" font-weight="700" fill="#2763A1" text-anchor="start">四工具均在沙箱内执行</text>
+<text x="1625" y="551" font-family="Microsoft YaHei, sans-serif" font-size="26" font-weight="400" fill="#52677E" text-anchor="start">read_file  ·  list_directory</text>
+<text x="1625" y="592" font-family="Microsoft YaHei, sans-serif" font-size="26" font-weight="400" fill="#52677E" text-anchor="start">write_file  ·  run_command</text>
+<text x="1625" y="665" font-family="Microsoft YaHei, sans-serif" font-size="28" font-weight="400" fill="#243B53" text-anchor="start">命令后代核验同一 SID</text>
+<text x="1625" y="712" font-family="Microsoft YaHei, sans-serif" font-size="28" font-weight="400" fill="#243B53" text-anchor="start">角色无网络</text>
+<text x="1625" y="759" font-family="Microsoft YaHei, sans-serif" font-size="28" font-weight="400" fill="#243B53" text-anchor="start">主控仅转发模型推理</text>
+<text x="1625" y="806" font-family="Microsoft YaHei, sans-serif" font-size="28" font-weight="400" fill="#243B53" text-anchor="start">登录凭据保留在主控</text>
+<rect x="1590" y="940" width="615" height="335" rx="20" fill="#F1EDF7" stroke="#C4B6DB" stroke-width="2"/>
+<text x="1625" y="994" font-family="Microsoft YaHei, sans-serif" font-size="33" font-weight="700" fill="#7353A4" text-anchor="start">上游成果如何交给下游</text>
+<text x="1625" y="1051" font-family="Microsoft YaHei, sans-serif" font-size="27" font-weight="400" fill="#243B53" text-anchor="start">判定、复核所需的完整上游成果</text>
+<text x="1625" y="1098" font-family="Microsoft YaHei, sans-serif" font-size="27" font-weight="400" fill="#243B53" text-anchor="start">由主控按授权复制为自己的输入</text>
+<text x="1625" y="1145" font-family="Microsoft YaHei, sans-serif" font-size="27" font-weight="400" fill="#243B53" text-anchor="start">不得越界直读其他角色工作区</text>
+<text x="1625" y="1192" font-family="Microsoft YaHei, sans-serif" font-size="27" font-weight="400" fill="#243B53" text-anchor="start">原件引用／映射不增加阅读权限</text>
+<rect x="1590" y="1315" width="615" height="380" rx="20" fill="#FFFFFF" stroke="#BFCFE0" stroke-width="2"/>
+<text x="1625" y="1369" font-family="Microsoft YaHei, sans-serif" font-size="33" font-weight="700" fill="#17314D" text-anchor="start">运行控制与业务边界</text>
+<text x="1625" y="1427" font-family="Microsoft YaHei, sans-serif" font-size="29" font-weight="700" fill="#2763A1" text-anchor="start">LangGraph 持久化保存</text>
+<text x="1625" y="1471" font-family="Microsoft YaHei, sans-serif" font-size="26" font-weight="400" fill="#243B53" text-anchor="start">确认、版本、任务、采用、复核状态</text>
+<text x="1625" y="1519" font-family="Microsoft YaHei, sans-serif" font-size="26" font-weight="400" fill="#243B53" text-anchor="start">沙箱：负责文件与命令权限</text>
+<text x="1625" y="1567" font-family="Microsoft YaHei, sans-serif" font-size="26" font-weight="400" fill="#243B53" text-anchor="start">业务正确性：须经独立业务复核</text>
+<text x="1625" y="1615" font-family="Microsoft YaHei, sans-serif" font-size="26" font-weight="400" fill="#243B53" text-anchor="start">最终签认：仍由评价人员完成</text>
+<rect x="1590" y="1735" width="615" height="270" rx="20" fill="#FFF1ED" stroke="#DDB6AD" stroke-width="2"/>
+<text x="1625" y="1790" font-family="Microsoft YaHei, sans-serif" font-size="32" font-weight="700" fill="#A94B4B" text-anchor="start">失败与返工只影响具体项</text>
+<text x="1625" y="1844" font-family="Microsoft YaHei, sans-serif" font-size="26" font-weight="400" fill="#243B53" text-anchor="start">保留真实失败证据与待办</text>
+<text x="1625" y="1886" font-family="Microsoft YaHei, sans-serif" font-size="26" font-weight="400" fill="#243B53" text-anchor="start">受影响项使用新身份／新上下文</text>
+<text x="1625" y="1928" font-family="Microsoft YaHei, sans-serif" font-size="26" font-weight="400" fill="#243B53" text-anchor="start">不重做已接受的无关成果</text>
+<text x="1625" y="1970" font-family="Microsoft YaHei, sans-serif" font-size="26" font-weight="400" fill="#243B53" text-anchor="start">不静默降级权限或切换模型</text>
+<text x="45" y="2076" font-family="Microsoft YaHei, sans-serif" font-size="24" font-weight="400" fill="#52677E" text-anchor="start">依据：1.2.0 的 SKILL.md 与 sandbox-execution.md。结构通过、复核接受均不代替最终人工确认。</text>
+<text x="45" y="2120" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#52677E" text-anchor="start">G1 资料授权 ≠ 准备就绪或已读；四路完整交付后才交判定；每批判定交接通过后立即安排独立复核。</text>
+</svg>
